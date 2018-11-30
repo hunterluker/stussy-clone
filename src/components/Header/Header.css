@@ -1,0 +1,20 @@
+.header-wrapper {
+    margin-top: 60px;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed !important;
+    top: 0;
+    z-index: 999 !important;
+    background: white;
+    height: 55px;
+}
+
+.navbar-toggler {
+    border: none !important;
+    padding: 0 !important;
+}
