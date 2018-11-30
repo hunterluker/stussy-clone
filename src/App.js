@@ -5,16 +5,41 @@ import Footer from './components/Footer/Footer';
 import routes from './routes';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Spinner from 'react-spinkit';
 
 class App extends Component {
-  
+  constructor() {
+    super();
+
+    this.state = {
+      loading: false
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(
+      function() {
+        this.setState({
+          loading: true
+        });
+      }.bind(this),
+      3000
+    );
+  }
   render() {
     return (
       <Router>
         <div className="App">
-         <Header />
-         {routes}
-         <Footer />
+          {this.state.loading === false ? (
+            <div className="loader">
+              <Spinner name="pacman" />
+            </div>
+          ) : (
+            <div>
+              {' '}
+              <Header /> {routes} <Footer />
+            </div>
+          )}
         </div>
       </Router>
     );
