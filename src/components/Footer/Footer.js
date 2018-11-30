@@ -31,9 +31,15 @@ export default function Footer() {
             </div>
             <div className="col-md-12 text-uppercase pt-3 text-center">
               <ul className="m-0 p-0">
-                <li className="mb-3">Customer Service</li>
-                <li className="mb-3">Chapters</li>
-                <li className="mb-3">Archive</li>
+                <li className="mb-3">
+                  <Link to="/">Customer Service</Link>
+                </li>
+                <li className="mb-3">
+                  <Link to="/">Chapters</Link>
+                </li>
+                <li className="mb-3">
+                  <Link to="/">Archive</Link>
+                </li>
               </ul>
             </div>
             <div className="col-md-12 text-uppercase pt-3 text-center">
