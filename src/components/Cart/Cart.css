@@ -1,0 +1,25 @@
+.cart-title {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 0.5px solid black;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+  }
+ 
+  .no-itmes {
+    padding-top: 10px;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .continue-btn {
+    background: black;
+    text-transform: uppercase;
+    color: white;
+    border-radius: none !important;
+    margin-bottom: 200px;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    padding: 10px 0 !important;
+  }

@@ -15,13 +15,13 @@ export default function NavMenu(props) {
         </div>
         <ul className={props.menuClose ? "navbar-menu d-none" : "navbar-menu"}>
           <Link to="/">
-            <li>Mens</li>
+            <li onClick={() => props.toggle()}>Mens</li>
           </Link>
           <li>Womens</li>
           <li>Accessories</li>
           <li>Collections</li>
-          <Link to="/">
-            <li>Account</li>
+          <Link to="/account">
+            <li onClick={() => props.toggle()}>Account</li>
           </Link>
           <li>
             <img src={flagImg} width="20px" alt="flag" /> North America

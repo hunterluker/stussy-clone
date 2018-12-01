@@ -31,7 +31,7 @@ export default function Footer() {
             </div>
             <div className="col-md-12 text-uppercase pt-3 text-center">
               <ul className="m-0 p-0">
-                <Link to="/">
+                <Link to="/customerservice">
                   <li className="mb-3">Customer Service</li>
                 </Link>
                 <li className="mb-3">

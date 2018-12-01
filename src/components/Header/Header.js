@@ -48,7 +48,7 @@ export default class Header extends Component {
                 className="mt-2"
               />
             </a>
-            <Link to="/">
+            <Link to="/cart">
               <img
                 src={cartImg}
                 alt="cart-img"
@@ -61,7 +61,7 @@ export default class Header extends Component {
         </header>
 
         {loaded === false ? null : hidden === false ? (
-          <NavMenu />
+          <NavMenu toggle={this.toggleMenu} />
         ) : (
           <NavMenu menuClose />
         )}

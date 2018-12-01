@@ -1,0 +1,34 @@
+.customer-service {
+  background: black;
+  color: white;
+  border-radius: none !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+}
+
+.service-title {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.service-p {
+  font-size: 12px;
+}
+
+.submit-btn {
+  background: black;
+  color: white;
+  border-radius: none !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+}
+
+.address-container {
+    font-size: 12px;
+    margin-bottom: 50px;
+}
+
+.address-container p {
+    margin: 0;
+    padding: 0;
+}
