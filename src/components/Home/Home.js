@@ -16,7 +16,7 @@ export default class Home extends Component {
           <div className="row">
             <div className="col-12 col-md-12" />
             <div className="hero-text">
-              <h1 className="section-title">Mens New Arrivals</h1>
+              <h1 className="section-title text-white">Mens New Arrivals</h1>
             </div>
             <div className="hero-img">
               <img src={heroImg} alt="hero-img" className="img-fluid" />
