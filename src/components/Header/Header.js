@@ -13,6 +13,8 @@ export default class Header extends Component {
       hidden: true,
       loaded: false
     };
+
+    this.toggleMenu = this.toggleMenu.bind(this)
   }
 
   toggleMenu() {
@@ -22,11 +24,11 @@ export default class Header extends Component {
 
     this.setState({
       loaded: true
-    })
+    });
   }
 
   render() {
-    const { hidden , loaded} = this.state;
+    const { hidden, loaded } = this.state;
     return (
       <div className="header-wrapper">
         <header className="header">
@@ -50,7 +52,7 @@ export default class Header extends Component {
               <img
                 src={cartImg}
                 alt="cart-img"
-                width="20px"
+                width="24px"
                 height="auto"
                 className="mb-1"
               />
@@ -58,7 +60,6 @@ export default class Header extends Component {
           </nav>
         </header>
 
-        
         {loaded === false ? null : hidden === false ? (
           <NavMenu />
         ) : (

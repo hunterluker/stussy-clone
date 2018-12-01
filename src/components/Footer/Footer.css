@@ -1,9 +1,9 @@
 .footer {
     color: black !important;
     font-size: 14px;
+    position: relative;
+    bottom: 0;
 }
-
-
 
 .social-list {
     justify-content: center;

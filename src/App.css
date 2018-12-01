@@ -1,3 +1,7 @@
+.App {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
 .loader {
     height: 100vh;
     display: flex;

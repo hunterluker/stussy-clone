@@ -52,19 +52,21 @@
 }
 
 .menu {
-  overflow-y: hidden;
   width: 100vw;
   height: 100vh;
   background: white;
   z-index: 999;
   position: fixed;
+  overflow: hidden;
   animation: fadeInRight 0.9s ease-in-out;
   transition: all 0.75s ease;
 }
 
 .menu-close {
-  animation: fadeOutRight 0.9s ease-in-out;
+  height: 0;
+  width: 0;
   opacity: 0;
+  animation: fadeOutRight 0.9s ease-in-out;
 }
 
 .nav-search {

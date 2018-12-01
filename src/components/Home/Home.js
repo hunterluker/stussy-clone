@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import heroImg from '../../images/homepage_international_tribe-homepage.jpg';
+import heroImg from '../../images/hero.jpg';
 import globeImg from '../../images/Snowglobe-copy.jpg';
 import mensImg from '../../images/week4-patchwork1.jpg';
 import archiveImg from '../../images/img-22-11.jpg';

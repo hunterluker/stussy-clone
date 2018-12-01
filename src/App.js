@@ -23,7 +23,7 @@ class App extends Component {
           loading: true
         });
       }.bind(this),
-      3000
+      2000
     );
   }
   render() {
