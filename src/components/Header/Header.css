@@ -58,7 +58,7 @@
   z-index: 999;
   position: fixed;
   overflow: hidden;
-  animation: fadeInRight 0.9s ease-in-out;
+  animation: fadeInRight 0.6s ease-in-out;
   transition: all 0.75s ease;
 }
 
@@ -66,7 +66,7 @@
   height: 0;
   width: 0;
   opacity: 0;
-  animation: fadeOutRight 0.9s ease-in-out;
+  animation: fadeOutRight 0.6s ease-in-out;
 }
 
 .nav-search {

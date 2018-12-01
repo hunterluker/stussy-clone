@@ -1,0 +1,17 @@
+.page-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.chapter-location {
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.chapter-location p {
+    margin: 0;
+    padding: 0;
+}

@@ -3,7 +3,8 @@ import {Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
 import Cart from './components/Cart/Cart'
 import Account from './components/Account/Account'
-import CustomerService from './components/CustomerService/CustomerService'
+import CustomerService from './components/CustomerService/CustomerService';
+import Chapters from './components/Chapters/Chapters';
 
 export default (
     <Switch>
@@ -11,5 +12,6 @@ export default (
         <Route path="/account" component={Account}/>
         <Route path="/cart" component={Cart}/>
         <Route path="/customerservice" component={CustomerService}/>
+        <Route path="/chapters" component={Chapters}/>
     </Switch>
 )
