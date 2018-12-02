@@ -6,6 +6,8 @@ import routes from './routes';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Spinner from 'react-spinkit';
+import { Provider } from 'react-redux';
+import store from './store';
 
 class App extends Component {
   constructor() {
@@ -28,20 +30,22 @@ class App extends Component {
   }
   render() {
     return (
-      <Router>
-        <div className="App">
-          {this.state.loading === false ? (
-            <div className="loader">
-              <Spinner name="pacman" />
-            </div>
-          ) : (
-            <div>
-              {' '}
-              <Header /> {routes} <Footer />
-            </div>
-          )}
-        </div>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div className="App">
+            {this.state.loading === false ? (
+              <div className="loader">
+                <Spinner name="pacman" />
+              </div>
+            ) : (
+              <div>
+                {' '}
+                <Header /> {routes} <Footer />
+              </div>
+            )}
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }
