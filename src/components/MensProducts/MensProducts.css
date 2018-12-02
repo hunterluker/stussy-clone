@@ -1,0 +1,20 @@
+.mens-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+
+.product-title {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
