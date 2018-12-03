@@ -19,9 +19,9 @@ massive(CONNECTION_STRING)
 
 
 // ENDPOINTS
-app.get('/api/products', pc.getAllProducts);
+app.get('/api/products/:gender', pc.getAllProducts);
 
-app.get('/api/product/:id', pc.getProduct);
+app.get('/api/product/:gender/:id', pc.getProduct);
 
 
 app.listen(SERVER_PORT, () => {

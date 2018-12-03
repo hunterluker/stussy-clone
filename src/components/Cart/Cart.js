@@ -16,7 +16,7 @@ class Cart extends Component {
 
     const mappedCart = cart.map(product => {
       return (
-        <div className="product-container">
+        <div className="product-container" key={product.product_id}>
           <div className="image-container">
             <img src={product.main_image} alt="" className="img-fluid" />
           </div>

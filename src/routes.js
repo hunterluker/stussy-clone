@@ -5,7 +5,7 @@ import Cart from './components/Cart/Cart'
 import Account from './components/Account/Account'
 import CustomerService from './components/CustomerService/CustomerService';
 import Chapters from './components/Chapters/Chapters';
-import MensProducts from './components/MensProducts/MensProducts';
+import Products from './components/Products/Products';
 import DetailProduct from './components/DetailProduct/DetailProduct';
 
 export default (
@@ -15,7 +15,7 @@ export default (
         <Route path="/cart" component={Cart}/>
         <Route path="/customerservice" component={CustomerService}/>
         <Route path="/chapters" component={Chapters}/>
-        <Route path="/mens" component={MensProducts}/>
-        <Route path="/product/:id" component={DetailProduct} />
+        <Route path="/products/:gender" component={Products}/>
+        <Route path="/product/:gender/:id" component={DetailProduct} />
     </Switch>
 )

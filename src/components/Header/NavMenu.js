@@ -13,11 +13,13 @@ export default function NavMenu(props) {
         <div className="nav-search">
           <input type="text" placeholder="SEARCH" width="100%" />
         </div>
-        <ul className={props.menuClose ? "navbar-menu d-none" : "navbar-menu"}>
-          <Link to="/mens">
+        <ul className={props.menuClose ? 'navbar-menu d-none' : 'navbar-menu'}>
+          <Link to={`/products/${'male'}`}>
             <li onClick={() => props.toggle()}>Mens</li>
           </Link>
-          <li>Womens</li>
+          <Link to={`/products/${'female'}`}>
+            <li onClick={() => props.toggle()}>Womens</li>
+          </Link>
           <li>Accessories</li>
           <li>Collections</li>
           <Link to="/account">

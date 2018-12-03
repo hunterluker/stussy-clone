@@ -31,7 +31,6 @@ class Header extends Component {
 
   render() {
     const { hidden, loaded, cartQuantity } = this.state;
-    console.log(this.state.cart);
     return (
       <div className="header-wrapper">
         <header className="header">

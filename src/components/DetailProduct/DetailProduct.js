@@ -18,7 +18,7 @@ class DetailProduct extends Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/product/${this.props.match.params.id}`).then(res => {
+    axios.get(`/api/product/${this.props.match.params.gender}/${this.props.match.params.id}`).then(res => {
       this.props.updateProductImage(res.data[0].main_image)
       this.setState({
         product: res.data[0],
@@ -35,6 +35,7 @@ class DetailProduct extends Component {
 
   addToCart(product) {
     this.props.addToCart(product)
+    this.props.history.push('/cart')
   }
 
 
