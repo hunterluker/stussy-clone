@@ -15,26 +15,26 @@ create table product_images (
     id serial primary key,
     product_id integer,
     main_image text,
-    image1,
-    image2,
-    image3
+    image1 text,
+    image2 text,
+    image3 text
 )
 
 
 -- MALE
 insert into products 
 ( product_id, price, title, description, gender, category)
-values(1, 45.00, 'Stock International L/SL Tee', 'Regular fit long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'male', 'tees');
+values(1, 45.00, 'Stock International L/SL Tee', 'Regular fit long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
 
 
 insert into products 
 ( product_id, price, title, description, gender, category)
-values(2, 40.00, 'Surf Skull Tee', 'Regular fit short sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'male', 'tees');
+values(2, 40.00, 'Surf Skull Tee', 'Regular fit short sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
 
 
 insert into products 
 ( product_id, price, title, description, gender, category)
-values(3, 110.00, 'Polar Fleece Mock Neck', 'Mocked neck Patched logo Zipper closure Front zip pouch 100% polyester polar fleece Imported', 'male', 'jackets');
+values(3, 110.00, 'Polar Fleece Mock Neck', 'Mocked neck Patched logo Zipper closure Front zip pouch 100% polyester polar fleece Imported', 'mens', 'jackets');
 
 
 insert into product_images
@@ -54,11 +54,44 @@ values(3, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cac
 -- FEMALE
 insert into products 
 ( product_id, price, title, description, gender, category)
-values(4, 38.00, 'W Stock International L/SL Tee', 'Womens long long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'female', 'tees');
+values(4, 38.00, 'W Stock International L/SL Tee', 'Womens long long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'womens', 'tees');
 
 insert into product_images
 (product_id, main_image, image1, image2, image3)
 values(4, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992588_PALG_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992588_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992588_PALG_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992588_GHEA_1.jpg');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(5, 60.00, 'Lucile stripe l/sl mock neck', 'Womens long long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'womens', 'tees');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(5, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/214465_PEAC_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/214465_PEAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/214465_BLAC_1.jpg');
+
+
+-- ACCESSORIES
+insert into products 
+( product_id, price, title, description, gender, category)
+values(6, 125.00, 'Romeo', 'Optical grade acetate Mineral glass lenses', 'accessories', 'sunglasses');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(6, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/4/140015_TCBM_1_2.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/4/140015_TCBM_1_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/4/140015_MBBM_1_2.jpg');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(7, 65.00, 'Vita Kisslock Purse', 'Top handle Kisslock entry 100% leather', 'accessories', 'bags');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(7, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/234071_BLAC_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/234071_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/234071_GREN_1.jpg');
+
+
+
+
+
+truncate products;
+truncate product_images;
 
 select *
 from products p 

@@ -13,13 +13,30 @@ export default class Products extends Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/products/${this.props.match.params.gender}`).then(res => {
-      this.setState({
-        products: res.data
+    if (!this.props.match.params.gender) {
+      axios.get(`/api/products`).then(res => {
+        this.setState({
+          products: res.data
+        });
       });
-    });
+    } else {
+      axios.get(`/api/products/${this.props.match.params.gender}`).then(res => {
+        this.setState({
+          products: res.data
+        });
+      });
+    }
   }
 
+  componentDidUpdate() {
+    if (!this.props.match.params.gender) {
+      axios.get(`/api/products`).then(res => {
+        this.setState({
+          products: res.data
+        });
+      });
+    }
+  }
 
   componentWillReceiveProps(newProps) {
     axios.get(`/api/products/${newProps.match.params.gender}`).then(res => {
@@ -56,7 +73,7 @@ export default class Products extends Component {
         <div className="row">
           <div className="col-md-12">
             <h1 className="mens-title text-center pt-2">
-              {this.props.match.params.gender}
+              {this.props.match.params.gender ? this.props.match.params.gender: 'All Products'}
             </h1>
             {mappedProducts}
           </div>

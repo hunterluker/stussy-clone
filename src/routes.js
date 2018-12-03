@@ -15,6 +15,7 @@ export default (
         <Route path="/cart" component={Cart}/>
         <Route path="/customerservice" component={CustomerService}/>
         <Route path="/chapters" component={Chapters}/>
+        <Route exact path="/products" component={Products}/>
         <Route path="/products/:gender" component={Products}/>
         <Route path="/product/:gender/:id" component={DetailProduct} />
     </Switch>
