@@ -92,3 +92,15 @@
   text-align: center;
   padding: 20px;
 }
+
+.cart-container {
+  position: relative;
+}
+
+.cart-quantity {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  font-size: 14px;
+  z-index: -5;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './DetailProduct.css';
 import { connect } from 'react-redux';
-import { updateProductImage } from '../../ducks/reducer';
+import { updateProductImage, addToCart} from '../../ducks/reducer';
 
 class DetailProduct extends Component {
   constructor(props) {
@@ -19,11 +19,11 @@ class DetailProduct extends Component {
 
   componentDidMount() {
     axios.get(`/api/product/${this.props.match.params.id}`).then(res => {
+      this.props.updateProductImage(res.data[0].main_image)
       this.setState({
         product: res.data[0],
         mainProductImage: res.data[0].main_image
       });
-      this.props.updateProductImage(res.data[0].main_image)
     });
   }
 
@@ -31,6 +31,10 @@ class DetailProduct extends Component {
     this.setState({
       size: size
     })
+  }
+
+  addToCart(product) {
+    this.props.addToCart(product)
   }
 
 
@@ -42,7 +46,7 @@ class DetailProduct extends Component {
   }
 
   render() {
-    const { product } = this.state;
+    const { product, mainProductImage } = this.state;
     return (
       <div className="container pt-2">
         <div className="row">
@@ -107,7 +111,7 @@ class DetailProduct extends Component {
                 </div>
               ) : null}
 
-              <button className="add-cart-btn btn btn-block py-3 mt-3" disabled={!this.state.size ? true : false}>
+              <button onClick={() => this.addToCart(product, mainProductImage)} className="add-cart-btn btn btn-block py-3 mt-3" disabled={!this.state.size ? true : false}>
                 Add to bag
               </button>
             </div>
@@ -118,7 +122,7 @@ class DetailProduct extends Component {
   }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     selectedImage: state.mainProductImage
   };
@@ -126,5 +130,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { updateProductImage }
+  { updateProductImage, addToCart }
 )(DetailProduct);

@@ -4,17 +4,19 @@ import brandImg from '../../images/stussy-stock-logo.svg';
 import cartImg from '../../images/shopping-bag.svg';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import { connect } from 'react-redux';
 
-export default class Header extends Component {
-  constructor() {
-    super();
+class Header extends Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
+      cart: this.props.cartQuantity,
       hidden: true,
       loaded: false
     };
 
-    this.toggleMenu = this.toggleMenu.bind(this)
+    this.toggleMenu = this.toggleMenu.bind(this);
   }
 
   toggleMenu() {
@@ -28,7 +30,8 @@ export default class Header extends Component {
   }
 
   render() {
-    const { hidden, loaded } = this.state;
+    const { hidden, loaded, cartQuantity } = this.state;
+    console.log(this.state.cart);
     return (
       <div className="header-wrapper">
         <header className="header">
@@ -48,15 +51,19 @@ export default class Header extends Component {
                 className="mt-2"
               />
             </a>
-            <Link to="/cart">
-              <img
-                src={cartImg}
-                alt="cart-img"
-                width="24px"
-                height="auto"
-                className="mb-1"
-              />
-            </Link>
+            <div className="cart-container">
+              <Link to="/cart">
+                <img
+                  src={cartImg}
+                  alt="cart-img"
+                  width="24px"
+                  height="auto"
+                  className="mb-1"
+                  onClick={!this.state.hidden ? () => this.toggleMenu() : null}
+                />
+              </Link>
+              {<span className="cart-quantity">{cartQuantity}</span>}
+            </div>
           </nav>
         </header>
 
@@ -69,3 +76,14 @@ export default class Header extends Component {
     );
   }
 }
+
+function mapStateToProps({ cartQuantity }) {
+  return {
+    cartQuantity
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  {}
+)(Header);

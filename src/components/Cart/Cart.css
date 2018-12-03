@@ -1,25 +1,104 @@
 .cart-title {
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: bold;
-    border-bottom: 0.5px solid black;
-    padding-bottom: 30px;
-    margin-bottom: 50px;
-  }
- 
-  .no-itmes {
-    padding-top: 10px;
-    font-size: 12px;
-    text-align: center;
-  }
-  
-  .continue-btn {
-    background: black;
-    text-transform: uppercase;
-    color: white;
-    border-radius: none !important;
-    margin-bottom: 200px;
-    font-size: 14px !important;
-    font-weight: bold !important;
-    padding: 10px 0 !important;
-  }
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  border-bottom: 0.5px solid black;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+
+.no-itmes {
+  padding-top: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.continue-btn {
+  background: black;
+  text-transform: uppercase;
+  color: white;
+  border-radius: none !important;
+  margin-bottom: 200px;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding: 10px 0 !important;
+}
+
+.checkout-btn {
+  background: black;
+  text-transform: uppercase;
+  color: white;
+  border-radius: none !important;
+  margin-bottom: 200px;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding: 10px 0 !important;
+}
+
+.product-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  border-bottom: 0.5px solid black;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.image-container {
+  width: 33%;
+  margin-right: 10px;
+}
+
+.text-container {
+  font-size: 12px;
+}
+
+.product-title-cart {
+  margin: 0;
+  font-weight: bold;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+.product-color {
+  margin: 0;
+  padding: 0;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-qty-container {
+  margin-left: 20px;
+}
+
+.product-qty-container span {
+  margin-right: 30px;
+}
+
+.total-container {
+  font-size: 12px;
+  margin-bottom: 50px;
+  float: right;
+}
+
+.total-container p {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.sub-total span{
+  float: right;
+  margin-left: 50px;
+}
+
+.cart-total span {
+  float: right;
+}
+
+.cart-total {
+  font-weight: bold;
+}

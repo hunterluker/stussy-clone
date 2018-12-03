@@ -1,7 +1,10 @@
 import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from './ducks/reducer';
 
-export default createStore(
+const store = createStore(
   reducer,
-  + window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  composeWithDevTools()
 );
+
+export default store;
