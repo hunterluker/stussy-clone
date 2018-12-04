@@ -34,7 +34,12 @@ class DetailProduct extends Component {
   }
 
   addToCart(product) {
-    this.props.addToCart(product)
+    const cartProduct = {
+     ...product,
+      size: this.state.size,
+      main_image: this.state.mainProductImage
+    }
+    this.props.addToCart(cartProduct)
     this.props.history.push('/cart')
   }
 
@@ -54,8 +59,8 @@ class DetailProduct extends Component {
           <div className="col-md-12">
             <img
               src={
-                this.state.mainProductImage
-                  ? this.state.mainProductImage
+                mainProductImage
+                  ? mainProductImage
                   : product.main_image
               }
               alt=""
@@ -112,7 +117,7 @@ class DetailProduct extends Component {
                 </div>
               ) : null}
 
-              <button onClick={() => this.addToCart(product, mainProductImage)} className="add-cart-btn btn btn-block py-3 mt-3" disabled={!this.state.size ? true : false}>
+              <button onClick={() => this.addToCart(product)} className="add-cart-btn btn btn-block py-3 mt-3" disabled={!this.state.size ? true : false}>
                 Add to bag
               </button>
             </div>

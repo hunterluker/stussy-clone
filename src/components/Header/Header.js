@@ -11,7 +11,6 @@ class Header extends Component {
     super(props);
 
     this.state = {
-      cart: this.props.cartQuantity,
       hidden: true,
       loaded: false
     };
@@ -30,7 +29,7 @@ class Header extends Component {
   }
 
   render() {
-    const { hidden, loaded, cartQuantity } = this.state;
+    const { hidden, loaded } = this.state;
     return (
       <div className="header-wrapper">
         <header className="header">
@@ -61,7 +60,7 @@ class Header extends Component {
                   onClick={!this.state.hidden ? () => this.toggleMenu() : null}
                 />
               </Link>
-              {<span className="cart-quantity">{cartQuantity}</span>}
+              {<span className="cart-quantity">{this.props.cartQuantity <= 0 ? null : this.props.cartQuantity}</span>}
             </div>
           </nav>
         </header>

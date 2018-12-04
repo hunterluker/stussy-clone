@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Cart.css';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { updateCartTotal, deleteCartItem } from '../../ducks/reducer';
 
 class Cart extends Component {
   constructor(props) {
@@ -8,17 +10,52 @@ class Cart extends Component {
 
     this.state = {
       cart: this.props.cart,
-      cartTotal: this.props.cartTotal
+      itemCount: 1
     };
   }
+
+  onItemCountUpdate(str, id) {
+    if (str === '-') {
+      this.setState(prevState => ({
+        itemCount: prevState.itemCount - 1
+      }));
+    } else {
+      this.setState(prevState => ({
+        itemCount: prevState.itemCount + 1
+      }));
+    }
+
+    
+
+    if(this.state.itemCount  <= 1) {
+      this.props.deleteCartItem(id);
+      let newCart = this.state.cart.filter(item => item.id !== id);
+      this.setState(() => ({
+        cart: newCart
+      }));
+    }
+  }
+
+  componentDidMount() {
+    if (this.state.cart.length === 0) {
+      return;
+    } else {
+      this.props.updateCartTotal();
+    }
+  }
+
+
+
   render() {
     const { cart } = this.state;
 
-    const mappedCart = cart.map(product => {
+    const mappedCart = cart.map((product, i) => {
       return (
-        <div className="product-container" key={product.product_id}>
+        <div className="product-container" key={i}>
           <div className="image-container">
-            <img src={product.main_image} alt="" className="img-fluid" />
+            <Link to={`/product/${product.gender}/${product.product_id}`}>
+              <img src={product.main_image} alt="" className="img-fluid" />
+            </Link>
           </div>
           <div className="text-container">
             <p className="product-title-cart">{product.title}</p>
@@ -27,11 +64,17 @@ class Cart extends Component {
 
             <div className="price-container">
               <div className="product-qty-container">
-                <span>-</span>
-                <span>{1}</span>
-                <span>+</span>
+                <span
+                  onClick={() => {
+                    this.onItemCountUpdate('-', product.id);
+                  }}
+                >
+                  -
+                </span>
+                <span>{this.state.itemCount >= 1 && this.state.itemCount}</span>
+                <span onClick={() => this.onItemCountUpdate('+')}>+</span>
               </div>
-              <p>${product.price}.00</p>
+              <p>${this.state.itemCount === 1 ? product.price : (this.state.itemCount * product.price)}.00</p>
             </div>
           </div>
         </div>
@@ -50,10 +93,16 @@ class Cart extends Component {
 
             {mappedCart}
 
-            {cart.length ? <div className="total-container">
-              <p className="sub-total">Sub total <span>${45}.00</span></p>
-              <p className="cart-total">Total <span>${45}.00</span></p>
-            </div> : null}
+            {cart.length ? (
+              <div className="total-container">
+                <p className="sub-total">
+                  Sub total <span>${this.props.cartTotal * this.state.itemCount}.00</span>
+                </p>
+                <p className="cart-total">
+                  Total <span>${this.props.cartTotal * this.state.itemCount}.00</span>
+                </p>
+              </div>
+            ) : null}
 
             {cart.length ? (
               <a href="/">
@@ -82,5 +131,5 @@ function mapStateToProps({ cart, cartTotal }) {
 
 export default connect(
   mapStateToProps,
-  {}
+  { updateCartTotal, deleteCartItem }
 )(Cart);

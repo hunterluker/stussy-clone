@@ -45,12 +45,14 @@
 }
 
 .image-container {
-  width: 33%;
+  width: 33.333%;
   margin-right: 10px;
 }
 
 .text-container {
   font-size: 12px;
+  width: 66.666%;
+  margin-left: 5px;
 }
 
 .product-title-cart {
@@ -68,6 +70,10 @@
 .price-container {
   display: flex;
   justify-content: space-between;
+}
+
+.price-container .product-price {
+  float: right;
 }
 
 .product-qty-container {
@@ -90,9 +96,10 @@
   text-transform: uppercase;
 }
 
-.sub-total span{
+.sub-total span {
   float: right;
   margin-left: 50px;
+  z-index: 999;
 }
 
 .cart-total span {
