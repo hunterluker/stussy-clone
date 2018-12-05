@@ -30,7 +30,7 @@ export default function reducer(state = initialState, action) {
     case DELETE_CART_ITEM:
       state.cartQuantity--;
 
-      let cart = state.cart.filter(item => item.id !== action.payload);
+      let cart = state.cart.filter(item => item.product_id !== action.payload);
 
       return Object.assign({}, state, { cart });
 
@@ -43,10 +43,14 @@ export default function reducer(state = initialState, action) {
         state.cartQuantity++;
       }
 
-      if (action.product.itemQuantity === 0) {
-        let deletedItem = state.cart.filter(item => item.id !== action.product.id);
+      let newTotal = 0;
 
-        return Object.assign({}, state, { cart: deletedItem });
+      state.cart.forEach(item => (newTotal += item.price));
+
+      if (action.product.itemQuantity === 0) {
+        let deletedItem = state.cart.filter(item => item.product_id !== action.product.product_id);
+
+        return Object.assign({}, state, { cart: deletedItem, cartTotal: newTotal});
       }
 
       return {
@@ -56,7 +60,8 @@ export default function reducer(state = initialState, action) {
             return action.product;
           }
           return item;
-        })
+        }),
+        cartTotal: newTotal
       };
       case UPDATE_CART:
 

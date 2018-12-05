@@ -36,7 +36,7 @@ class Cart extends Component {
     }
 
     if (product.itemQuantity < 1) {
-      let newCart = this.state.cart.filter(item => item.id !== product.id);
+      let newCart = this.state.cart.filter(item => item.product_id !== product.product_id);
       this.setState({
         cart: newCart
       });

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 import axios from 'axios';
 import './DetailProduct.css';
 import { connect } from 'react-redux';
@@ -36,6 +37,7 @@ class DetailProduct extends Component {
   addToCart(product) {
     const cartProduct = {
      ...product,
+      product_id: uuid(),
       size: this.state.size,
       main_image: this.state.mainProductImage,
       itemQuantity: 1
