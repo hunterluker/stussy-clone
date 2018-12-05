@@ -37,7 +37,8 @@ class DetailProduct extends Component {
     const cartProduct = {
      ...product,
       size: this.state.size,
-      main_image: this.state.mainProductImage
+      main_image: this.state.mainProductImage,
+      itemQuantity: 1
     }
     this.props.addToCart(cartProduct)
     this.props.history.push('/cart')
