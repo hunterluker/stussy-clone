@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {
   updateCartTotal,
-  deleteCartItem,
-  updateItemQuantity,
-  updateCart
+  updateItemQuantity
 } from '../../ducks/reducer';
 
 class Cart extends Component {
@@ -50,7 +48,7 @@ class Cart extends Component {
       return (
         <div className="product-container" key={i}>
           <div className="image-container">
-            <Link to={`/product/${product.gender}/${product.product_id}`}>
+            <Link to={`/product/${product.gender}/${product.id}`}>
               <img src={product.main_image} alt="" className="img-fluid" />
             </Link>
           </div>
@@ -132,5 +130,5 @@ function mapStateToProps({ cart, cartTotal }) {
 
 export default connect(
   mapStateToProps,
-  { updateCartTotal, deleteCartItem, updateItemQuantity, updateCart }
+  { updateCartTotal, updateItemQuantity }
 )(Cart);

@@ -9,8 +9,6 @@ const ADD_TO_CART = 'ADD_TO_CART';
 const UPDATE_PRODUCT_IMAGE = 'UPDATE_PRODUCT_IMAGE';
 const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL';
 const UPDATE_ITEM_QUANTITY = 'UPDATE_ITEM_QUANTITY';
-const DELETE_CART_ITEM = 'DELETE_CART_ITEM';
-const UPDATE_CART = 'UPDATE_CART'
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -26,13 +24,6 @@ export default function reducer(state = initialState, action) {
       state.cart.forEach(item => (total += item.price));
 
       return Object.assign({}, state, { cartTotal: total });
-
-    case DELETE_CART_ITEM:
-      state.cartQuantity--;
-
-      let cart = state.cart.filter(item => item.product_id !== action.payload);
-
-      return Object.assign({}, state, { cart });
 
     case UPDATE_ITEM_QUANTITY:
       if (action.string === 'minus') {
@@ -63,9 +54,6 @@ export default function reducer(state = initialState, action) {
         }),
         cartTotal: newTotal
       };
-      case UPDATE_CART:
-
-      return Object.assign({}, state, { cart });
     case UPDATE_PRODUCT_IMAGE:
       return Object.assign({}, state, { mainProductImage: action.payload });
     default:
@@ -80,12 +68,6 @@ export function addToCart(product) {
   };
 }
 
-export function deleteCartItem(id) {
-  return {
-    type: DELETE_CART_ITEM,
-    payload: id
-  };
-}
 
 export function updateCartTotal() {
   return {
@@ -108,8 +90,3 @@ export function updateItemQuantity(type, product) {
   };
 }
 
-export function updateCart() {
-  return {
-    type: UPDATE_CART
-  }
-}
