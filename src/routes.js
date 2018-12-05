@@ -7,6 +7,7 @@ import CustomerService from './components/CustomerService/CustomerService';
 import Chapters from './components/Chapters/Chapters';
 import Products from './components/Products/Products';
 import DetailProduct from './components/DetailProduct/DetailProduct';
+import Four from './components/Four/Four';
 
 export default (
     <Switch>
@@ -18,5 +19,6 @@ export default (
         <Route exact path="/products" component={Products}/>
         <Route path="/products/:gender" component={Products}/>
         <Route path="/product/:gender/:id" component={DetailProduct} />
+        <Route component={Four}/>
     </Switch>
 )

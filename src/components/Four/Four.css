@@ -1,0 +1,15 @@
+.four-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0 100px 0;
+}
+
+.four-container button {
+  background: black;
+  color: white;
+  border-radius: none !important;
+  text-transform: uppercase;
+  font-size: 14px !important;
+}
