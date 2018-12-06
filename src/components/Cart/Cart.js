@@ -2,39 +2,57 @@ import React, { Component } from 'react';
 import './Cart.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {
-  updateCartTotal,
-  updateItemQuantity
-} from '../../ducks/reducer';
+import { updateCartTotal, updateItemQuantity } from '../../ducks/reducer';
 
 class Cart extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cart: this.props.cart
+      cart: this.props.cart,
+      cartTotal: this.props.cartTotal
     };
   }
 
   componentDidMount() {
-    if (this.state.cart.length === 0) {
-      return;
+    if (this.state.cartTotal === 0) {
+      let total = this.props.cartTotal;
+      console.log('again');
+
+      this.state.cart.forEach(item => (total += item.price));
+      this.setState(() => ({
+        cartTotal: total
+      }));
+
+      this.props.updateCartTotal();
     } else {
       this.props.updateCartTotal();
+      this.setState(() => ({
+        cartTotal: this.props.cartTotal
+      }));
     }
   }
 
   onUpdateItem(type, product) {
+    let newTotal = this.state.cartTotal;
     if (type === 'minus') {
       this.props.updateItemQuantity('minus', product);
-      this.props.updateCartTotal();
+      this.state.cart.forEach(item => (newTotal -= item.price));
+      this.setState(() => ({
+        cartTotal: newTotal
+      }));
     } else if (type === 'plus') {
       this.props.updateItemQuantity('plus', product);
-      this.props.updateCartTotal();
+      this.state.cart.forEach(item => (newTotal += item.price));
+      this.setState(() => ({
+        cartTotal: newTotal
+      }));
     }
 
     if (product.itemQuantity < 1) {
-      let newCart = this.state.cart.filter(item => item.product_id !== product.product_id);
+      let newCart = this.state.cart.filter(
+        item => item.product_id !== product.product_id
+      );
       this.setState({
         cart: newCart
       });
@@ -42,15 +60,15 @@ class Cart extends Component {
   }
 
   render() {
-    const { cart} = this.state;
+    const { cart } = this.state;
 
     const mappedCart = cart.map((product, i) => {
       return (
         <div className="product-container" key={i}>
           <div className="image-container">
-            <Link to={`/product/${product.gender}/${product.id}`}>
-              <img src={product.main_image} alt="" className="img-fluid" />
-            </Link>
+            {/* <Link to={`/product/${product.gender}/${product.id}`}> */}
+            <img src={product.main_image} alt="" className="img-fluid" />
+            {/* </Link> */}
           </div>
           <div className="text-container">
             <p className="product-title-cart">{product.title}</p>

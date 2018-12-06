@@ -15,13 +15,17 @@ export default function reducer(state = initialState, action) {
     case ADD_TO_CART:
       state.cartQuantity++;
 
+      let newT = 0;
+
+      state.cart.forEach(item => (newT += item.price));
+
       const newCart = [...state.cart, action.payload];
 
-      return Object.assign({}, state, { cart: newCart });
+      return Object.assign({}, state, { cart: newCart, cartTotal: newT });
     case UPDATE_CART_TOTAL:
       let total = 0;
 
-      state.cart.forEach(item => (total += item.price));
+      state.cart.forEach(item => (total += item.price * item.itemQuantity));
 
       return Object.assign({}, state, { cartTotal: total });
 
@@ -36,7 +40,7 @@ export default function reducer(state = initialState, action) {
 
       let newTotal = 0;
 
-      state.cart.forEach(item => (newTotal += item.price));
+      state.cart.forEach(item => (newTotal += item.price * item.itemQuantity));
 
       if (action.product.itemQuantity === 0) {
         let deletedItem = state.cart.filter(item => item.product_id !== action.product.product_id);
