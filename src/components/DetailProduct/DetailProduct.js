@@ -107,7 +107,7 @@ class DetailProduct extends Component {
                 />
               ) : null}
 
-              {!product.sizes ? (
+              {product.gender !== 'accessories' ? (
                 <div className="sizes-container mt-3 mb-1">
                   <button onClick={() => this.onSizeSelection('S')}>S</button>{' '}
                   <button onClick={() => this.onSizeSelection('M')}>M</button>{' '}
@@ -122,7 +122,7 @@ class DetailProduct extends Component {
               <button
                 onClick={() => this.addToCart(product)}
                 className="add-cart-btn btn btn-block py-3 mt-3"
-                disabled={!this.state.size ? true : false}
+                disabled={!this.state.size && product.gender !== 'accessories' ? true : false}
               >
                 Add to bag
               </button>

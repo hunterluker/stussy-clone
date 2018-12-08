@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Cart.css';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { updateCartTotal, updateItemQuantity } from '../../ducks/reducer';
 
 class Cart extends Component {
@@ -17,7 +16,6 @@ class Cart extends Component {
   componentDidMount() {
     if (this.state.cartTotal === 0) {
       let total = this.props.cartTotal;
-      console.log('again');
 
       this.state.cart.forEach(item => (total += item.price));
       this.setState(() => ({
@@ -73,7 +71,7 @@ class Cart extends Component {
           <div className="text-container">
             <p className="product-title-cart">{product.title}</p>
             {/* <p className="product-color">Color: {product.color}</p> */}
-            <p className="product-size">Size: {product.size}</p>
+            <p className="product-size">{product.size ? `Size: ${product.size}`: null}</p>
 
             <div className="price-container">
               <div className="product-qty-container">
