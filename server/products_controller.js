@@ -10,10 +10,17 @@ module.exports = {
   getAllProductsByGender: (req, res) => {
     const db = req.app.get('db');
     const { gender } = req.params;
+    const { category } = req.query;
 
-    db.get_all_products_by_gender([gender]).then(resp => {
-      res.status(200).send(resp);
-    });
+    if (!category) {
+      db.get_all_products_by_gender([gender]).then(resp => {
+        res.status(200).send(resp);
+      });
+    } else {
+      db.get_all_products_by_category([gender, category]).then(resp => {
+        res.status(200).send(resp);
+      });
+    }
   },
 
   getProduct: (req, res) => {

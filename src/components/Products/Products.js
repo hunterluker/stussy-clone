@@ -19,6 +19,12 @@ export default class Products extends Component {
           products: res.data
         });
       });
+    } else if(this.props.location.search) {
+      axios.get(`/api/products/${this.props.match.params.gender}${this.props.location.search}`).then(res => {
+        this.setState({
+          products: res.data
+        });
+      });
     } else {
       axios.get(`/api/products/${this.props.match.params.gender}`).then(res => {
         this.setState({

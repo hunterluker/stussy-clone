@@ -87,7 +87,23 @@ insert into product_images
 values(7, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/234071_BLAC_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/234071_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/3/234071_GREN_1.jpg');
 
 
+insert into products 
+( product_id, price, title, description, gender, category)
+values(8, 90.00, 'Hibiscus Hood', 'Mocked neck Patched logo Zipper closure Front zip pouch 100% polyester polar fleece Imported', 'mens', 'hoodies');
 
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(8, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1924301_BLAC_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1924301_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1924301_PALG_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1924301_ASHH_1.jpg');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(9, 800.00, 'Twoness crown denim jacket', 'Mocked neck Patched logo Zipper closure Front zip pouch 100% polyester polar fleece Imported', 'mens', 'jackets');
+
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(9, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315152_LTDN_3.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315152_LTDN_3.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315152_INDO_3_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315152_LTDE_3.jpg');
 
 
 truncate products;
