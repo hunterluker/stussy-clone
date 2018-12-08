@@ -8,7 +8,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Spinner from 'react-spinkit';
 import { Provider } from 'react-redux';
-import store from './store';
+import { PersistGate } from 'redux-persist/integration/react';
+import {persistor, store} from './store';
 
 class App extends Component {
   constructor() {
@@ -32,22 +33,24 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
-          <ScrollToTop>
-            <div className="App">
-              {this.state.loading === false ? (
-                <div className="loader">
-                  <Spinner name="pacman" />
-                </div>
-              ) : (
-                <div>
-                  {' '}
-                  <Header /> {routes} <Footer />
-                </div>
-              )}
-            </div>
-          </ScrollToTop>
-        </Router>
+        <PersistGate loading={null} persistor={persistor}>
+          <Router>
+            <ScrollToTop>
+              <div className="App">
+                {this.state.loading === false ? (
+                  <div className="loader">
+                    <Spinner name="pacman" />
+                  </div>
+                ) : (
+                  <div>
+                    {' '}
+                    <Header /> {routes} <Footer />
+                  </div>
+                )}
+              </div>
+            </ScrollToTop>
+          </Router>
+        </PersistGate>
       </Provider>
     );
   }
