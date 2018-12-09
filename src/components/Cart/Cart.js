@@ -64,14 +64,14 @@ class Cart extends Component {
       return (
         <div className="product-container" key={i}>
           <div className="image-container">
-            {/* <Link to={`/product/${product.gender}/${product.id}`}> */}
             <img src={product.main_image} alt="" className="img-fluid" />
-            {/* </Link> */}
           </div>
           <div className="text-container">
             <p className="product-title-cart">{product.title}</p>
-            {/* <p className="product-color">Color: {product.color}</p> */}
-            <p className="product-size">{product.size ? `Size: ${product.size}`: null}</p>
+
+            <p className="product-size">
+              {product.size ? `Size: ${product.size}` : null}
+            </p>
 
             <div className="price-container">
               <div className="product-qty-container">

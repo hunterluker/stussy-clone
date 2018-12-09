@@ -109,20 +109,37 @@ class DetailProduct extends Component {
 
               {product.gender !== 'accessories' ? (
                 <div className="sizes-container mt-3 mb-1">
+                  {product.gender === 'womens' ? (
+                    <React.Fragment>
+                      <button onClick={() => this.onSizeSelection('XS')}>
+                        XS
+                      </button>{' '}
+                    </React.Fragment>
+                  ) : null}
                   <button onClick={() => this.onSizeSelection('S')}>S</button>{' '}
                   <button onClick={() => this.onSizeSelection('M')}>M</button>{' '}
                   <button onClick={() => this.onSizeSelection('L')}>L</button>{' '}
-                  <button onClick={() => this.onSizeSelection('XL')}>XL</button>{' '}
-                  <button onClick={() => this.onSizeSelection('XLL')}>
-                    XLL
-                  </button>
+                  {product.gender === 'womens' ? null : (
+                    <React.Fragment>
+                      <button onClick={() => this.onSizeSelection('XL')}>
+                        XL
+                      </button>{' '}
+                      <button onClick={() => this.onSizeSelection('XLL')}>
+                        XLL
+                      </button>
+                    </React.Fragment>
+                  )}
                 </div>
               ) : null}
 
               <button
                 onClick={() => this.addToCart(product)}
                 className="add-cart-btn btn btn-block py-3 mt-3"
-                disabled={!this.state.size && product.gender !== 'accessories' ? true : false}
+                disabled={
+                  !this.state.size && product.gender !== 'accessories'
+                    ? true
+                    : false
+                }
               >
                 Add to bag
               </button>
