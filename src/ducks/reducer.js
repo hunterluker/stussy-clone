@@ -1,3 +1,5 @@
+import { stat } from "fs";
+
 const initialState = {
   cart: [],
   mainProductImage: '',
@@ -14,6 +16,25 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TO_CART:
       state.cartQuantity++;
+
+      console.log(action.payload.main_image, action.payload.size);
+      let prevProduct = state.cart.find(
+        el => el.main_image === action.payload.main_image && el.size === action.payload.size
+      );
+      console.log(prevProduct);
+
+      if (prevProduct) {
+        console.log('inside');
+
+        prevProduct.itemQuantity++;
+
+        let newT = 0;
+
+        state.cart.forEach(item => (newT += item.price));
+
+
+        return Object.assign({}, state, { cartTotal: newT });
+      }
 
       let newT = 0;
 
@@ -43,9 +64,14 @@ export default function reducer(state = initialState, action) {
       state.cart.forEach(item => (newTotal += item.price * item.itemQuantity));
 
       if (action.product.itemQuantity === 0) {
-        let deletedItem = state.cart.filter(item => item.product_id !== action.product.product_id);
+        let deletedItem = state.cart.filter(
+          item => item.product_id !== action.product.product_id
+        );
 
-        return Object.assign({}, state, { cart: deletedItem, cartTotal: newTotal});
+        return Object.assign({}, state, {
+          cart: deletedItem,
+          cartTotal: newTotal
+        });
       }
 
       return {
@@ -72,7 +98,6 @@ export function addToCart(product) {
   };
 }
 
-
 export function updateCartTotal() {
   return {
     type: UPDATE_CART_TOTAL
@@ -93,4 +118,3 @@ export function updateItemQuantity(type, product) {
     product
   };
 }
-
