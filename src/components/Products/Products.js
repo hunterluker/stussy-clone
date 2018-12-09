@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Spinner from 'react-spinkit';
 import axios from 'axios';
 import './Products.css';
 
@@ -8,7 +9,8 @@ export default class Products extends Component {
     super(props);
 
     this.state = {
-      products: []
+      products: [],
+      loading: false
     };
   }
 
@@ -16,19 +18,28 @@ export default class Products extends Component {
     if (!this.props.match.params.gender) {
       axios.get(`/api/products`).then(res => {
         this.setState({
-          products: res.data
+          products: res.data,
+          loading: true
         });
       });
-    } else if(this.props.location.search) {
-      axios.get(`/api/products/${this.props.match.params.gender}${this.props.location.search}`).then(res => {
-        this.setState({
-          products: res.data
+    } else if (this.props.location.search) {
+      axios
+        .get(
+          `/api/products/${this.props.match.params.gender}${
+            this.props.location.search
+          }`
+        )
+        .then(res => {
+          this.setState({
+            products: res.data,
+            loading: true
+          });
         });
-      });
     } else {
       axios.get(`/api/products/${this.props.match.params.gender}`).then(res => {
         this.setState({
-          products: res.data
+          products: res.data,
+          loading: true
         });
       });
     }
@@ -75,16 +86,26 @@ export default class Products extends Component {
     });
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <h1 className="mens-title text-center pt-2">
-              {this.props.match.params.gender ? this.props.match.params.gender: 'All Products'}
-            </h1>
-            {mappedProducts}
+      <React.Fragment>
+        {this.state.loading === false ? (
+          <div className="product-load">
+            <Spinner name="line-spin-fade-loader" />
           </div>
-        </div>
-      </div>
+        ) : (
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <h1 className="mens-title text-center pt-2">
+                  {this.props.match.params.gender
+                    ? this.props.match.params.gender
+                    : 'All Products'}
+                </h1>
+                {mappedProducts}
+              </div>
+            </div>
+          </div>
+        )}
+      </React.Fragment>
     );
   }
 }

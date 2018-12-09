@@ -49,3 +49,11 @@
 .sizes-container button:visited {
     border: 1px solid black;
 }
+
+.product-load {
+    margin-top: 150px;
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
