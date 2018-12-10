@@ -28,7 +28,7 @@ export default function reducer(state = initialState, action) {
 
         state.cart.forEach(item => (newT += item.price));
 
-        return Object.assign({}, state, { cartTotal: newT });
+        return Object.assign({}, state, { cart: [...state.cart], cartTotal: newT });
       }
 
       let newT = 0;
