@@ -120,26 +120,48 @@ class DetailProduct extends Component {
                     <div className="sizes-container mt-3 mb-1">
                       {product.gender === 'womens' ? (
                         <React.Fragment>
-                          <button onClick={() => this.onSizeSelection('XS')}>
+                          <button
+                            id={
+                              this.state.size === 'XS' ? 'size-clicked' : null
+                            }
+                            onClick={() => this.onSizeSelection('XS')}
+                          >
                             XS
                           </button>{' '}
                         </React.Fragment>
                       ) : null}
-                      <button onClick={() => this.onSizeSelection('S')}>
+                      <button
+                        id={this.state.size === 'S' ? 'size-clicked' : null}
+                        onClick={() => this.onSizeSelection('S')}
+                      >
                         S
                       </button>{' '}
-                      <button onClick={() => this.onSizeSelection('M')}>
+                      <button
+                        id={this.state.size === 'M' ? 'size-clicked' : null}
+                        onClick={() => this.onSizeSelection('M')}
+                      >
                         M
                       </button>{' '}
-                      <button onClick={() => this.onSizeSelection('L')}>
+                      <button
+                        id={this.state.size === 'L' ? 'size-clicked' : null}
+                        onClick={() => this.onSizeSelection('L')}
+                      >
                         L
                       </button>{' '}
                       {product.gender === 'womens' ? null : (
                         <React.Fragment>
-                          <button onClick={() => this.onSizeSelection('XL')}>
+                          <button
+                            id={this.state.size === 'XL' ? 'size-clicked' : null}
+                            onClick={() => this.onSizeSelection('XL')}
+                          >
                             XL
                           </button>{' '}
-                          <button onClick={() => this.onSizeSelection('XLL')}>
+                          <button
+                            id={
+                              this.state.size === 'XLL' ? 'size-clicked' : null
+                            }
+                            onClick={() => this.onSizeSelection('XLL')}
+                          >
                             XLL
                           </button>
                         </React.Fragment>

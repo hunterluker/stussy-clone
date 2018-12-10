@@ -1,5 +1,3 @@
-import { stat } from "fs";
-
 const initialState = {
   cart: [],
   mainProductImage: '',
@@ -17,21 +15,18 @@ export default function reducer(state = initialState, action) {
     case ADD_TO_CART:
       state.cartQuantity++;
 
-      console.log(action.payload.main_image, action.payload.size);
       let prevProduct = state.cart.find(
-        el => el.main_image === action.payload.main_image && el.size === action.payload.size
+        el =>
+          el.main_image === action.payload.main_image &&
+          el.size === action.payload.size
       );
-      console.log(prevProduct);
 
       if (prevProduct) {
-        console.log('inside');
-
         prevProduct.itemQuantity++;
 
         let newT = 0;
 
         state.cart.forEach(item => (newT += item.price));
-
 
         return Object.assign({}, state, { cartTotal: newT });
       }

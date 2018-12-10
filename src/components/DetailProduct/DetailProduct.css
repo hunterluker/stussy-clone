@@ -35,14 +35,19 @@
     vertical-align: center;
     font-weight: bold;
     margin-right: 5px;
+    outline: none;
 }
 
-
+#size-clicked {
+    border: 1.5px solid black;
+    outline: none;
+}
 
 .sizes-container button:hover {
     border: 1px solid black;
 }
-.sizes-container button:active {
+
+.sizes-container button:focus {
     border: 1px solid black;
 }
 
