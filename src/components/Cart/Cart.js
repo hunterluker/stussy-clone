@@ -10,52 +10,28 @@ class Cart extends Component {
     super(props);
 
     this.state = {
-      cart: this.props.cart,
-      cartTotal: this.props.cartTotal
+      cart: this.props.cart
     };
   }
 
   onToken = token => {
     token.card = void 0;
     axios
-      .post('/api/checkout', { token, total: this.state.cartTotal * 100 })
+      .post('/api/checkout', { token, total: this.props.cartTotal * 100 })
       .then(res => {
         console.log(res);
       });
   };
 
   componentDidMount() {
-    if (this.state.cartTotal === 0) {
-      let total = this.props.cartTotal;
-
-      this.state.cart.forEach(item => (total += item.price));
-      this.setState(() => ({
-        cartTotal: total
-      }));
-
-      this.props.updateCartTotal();
-    } else {
-      this.props.updateCartTotal();
-      this.setState(() => ({
-        cartTotal: this.props.cartTotal
-      }));
-    }
+    this.props.updateCartTotal();
   }
 
   onUpdateItem(type, product) {
-    let newTotal = this.state.cartTotal;
     if (type === 'minus') {
       this.props.updateItemQuantity('minus', product);
-      this.state.cart.forEach(item => (newTotal -= item.price));
-      this.setState(() => ({
-        cartTotal: newTotal
-      }));
     } else if (type === 'plus') {
       this.props.updateItemQuantity('plus', product);
-      this.state.cart.forEach(item => (newTotal += item.price));
-      this.setState(() => ({
-        cartTotal: newTotal
-      }));
     }
 
     if (product.itemQuantity < 1) {
@@ -137,7 +113,7 @@ class Cart extends Component {
                 image="http://via.placeholder.com/100x100"
                 token={this.onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
-                amount={this.state.cartTotal * 100}
+                amount={this.props.cartTotal * 100}
               >
                 <button className="checkout-btn btn btn-block">Checkout</button>
               </StripeCheckout>
