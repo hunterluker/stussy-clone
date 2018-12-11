@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 import './Cart.css';
 import { connect } from 'react-redux';
 import { updateCartTotal, updateItemQuantity } from '../../ducks/reducer';
@@ -12,6 +14,15 @@ class Cart extends Component {
       cartTotal: this.props.cartTotal
     };
   }
+
+  onToken = token => {
+    token.card = void 0;
+    axios
+      .post('/api/checkout', { token, total: this.state.cartTotal * 100 })
+      .then(res => {
+        console.log(res);
+      });
+  };
 
   componentDidMount() {
     if (this.state.cartTotal === 0) {
@@ -120,9 +131,16 @@ class Cart extends Component {
             ) : null}
 
             {cart.length ? (
-              <a href="/">
+              <StripeCheckout
+                name="Sussy Clone"
+                description="Stussy Clone Cart Checkout"
+                image="http://via.placeholder.com/100x100"
+                token={this.onToken}
+                stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                amount={this.state.cartTotal * 100}
+              >
                 <button className="checkout-btn btn btn-block">Checkout</button>
-              </a>
+              </StripeCheckout>
             ) : (
               <a href="/">
                 <button className="continue-btn btn btn-block">

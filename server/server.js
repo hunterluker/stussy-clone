@@ -3,8 +3,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const massive = require('massive');
 const pc = require('./products_controller');
+const sc = require('./stripe_controller');
 
-let { SERVER_PORT, CONNECTION_STRING } = process.env;
+let { SERVER_PORT, CONNECTION_STRING, } = process.env;
 
 const app = express();
 
@@ -24,6 +25,10 @@ app.get('/api/products', pc.getAllProducts);
 app.get('/api/products/:gender', pc.getAllProductsByGender);
 
 app.get('/api/product/:gender/:id', pc.getProduct);
+
+
+// CHECKOUT
+app.post('/api/checkout', sc.checkout);
 
 
 app.listen(SERVER_PORT, () => {
