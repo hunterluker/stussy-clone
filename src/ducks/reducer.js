@@ -6,6 +6,7 @@ const initialState = {
 };
 
 const ADD_TO_CART = 'ADD_TO_CART';
+const CART_CHECKOUT = 'CART_CHECKOUT';
 const UPDATE_PRODUCT_IMAGE = 'UPDATE_PRODUCT_IMAGE';
 const UPDATE_CART_TOTAL = 'UPDATE_CART_TOTAL';
 const UPDATE_ITEM_QUANTITY = 'UPDATE_ITEM_QUANTITY';
@@ -28,7 +29,10 @@ export default function reducer(state = initialState, action) {
 
         state.cart.forEach(item => (newT += item.price));
 
-        return Object.assign({}, state, { cart: [...state.cart], cartTotal: newT });
+        return Object.assign({}, state, {
+          cart: [...state.cart],
+          cartTotal: newT
+        });
       }
 
       let newT = 0;
@@ -38,6 +42,8 @@ export default function reducer(state = initialState, action) {
       const newCart = [...state.cart, action.payload];
 
       return Object.assign({}, state, { cart: newCart, cartTotal: newT });
+    case CART_CHECKOUT:
+      return Object.assign({}, state, { cart: [], cartTotal: 0, cartQuantity: 0 });
     case UPDATE_CART_TOTAL:
       let total = 0;
 
@@ -90,6 +96,12 @@ export function addToCart(product) {
   return {
     type: ADD_TO_CART,
     payload: product
+  };
+}
+
+export function cartCheckout() {
+  return {
+    type: CART_CHECKOUT
   };
 }
 

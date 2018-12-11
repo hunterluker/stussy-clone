@@ -3,7 +3,11 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import './Cart.css';
 import { connect } from 'react-redux';
-import { updateCartTotal, updateItemQuantity } from '../../ducks/reducer';
+import {
+  updateCartTotal,
+  updateItemQuantity,
+  cartCheckout
+} from '../../ducks/reducer';
 
 class Cart extends Component {
   constructor(props) {
@@ -21,6 +25,12 @@ class Cart extends Component {
       .then(res => {
         console.log(res);
       });
+  };
+
+  onCheckout = () => {
+    this.props.cartCheckout();
+    this.props.updateCartTotal();
+    this.props.history.push('/success');
   };
 
   componentDidMount() {
@@ -87,6 +97,7 @@ class Cart extends Component {
         <div className="row">
           <div className="col-md-12">
             <h1 className="cart-title text-center">Shopping Bag</h1>
+
             {cart.length ? null : (
               <p className="no-itmes pb-2">
                 You have no items in your shopping bag.
@@ -110,10 +121,15 @@ class Cart extends Component {
               <StripeCheckout
                 name="Sussy Clone"
                 description="Stussy Clone Cart Checkout"
-                image="http://via.placeholder.com/100x100"
+                image="https://seeklogo.com/images/S/Stussy-logo-1839D43DEE-seeklogo.com.png"
                 token={this.onToken}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
                 amount={this.props.cartTotal * 100}
+                currency="USD"
+                shippingAddress
+                billingAddress
+                zipCode
+                closed={() => this.onCheckout()}
               >
                 <button className="checkout-btn btn btn-block">Checkout</button>
               </StripeCheckout>
@@ -140,5 +156,5 @@ function mapStateToProps({ cart, cartTotal }) {
 
 export default connect(
   mapStateToProps,
-  { updateCartTotal, updateItemQuantity }
+  { updateCartTotal, updateItemQuantity, cartCheckout }
 )(Cart);
