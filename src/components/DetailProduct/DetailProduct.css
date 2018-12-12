@@ -1,64 +1,73 @@
 .color-selection > img {
-    width: 55px;
-    padding-right: 15px;
+  width: 55px;
+  padding-right: 15px;
 }
 
 .product-title {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .product-price {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .add-cart-btn {
-    background: black;
-    text-transform: uppercase;
-    color: white;
-    font-size: 14px !important;
+  background: black;
+  text-transform: uppercase;
+  color: white;
+  font-size: 14px !important;
 }
 
 .sizes-container {
-    font-size: 14px;
-    font-weight: bold;
-    position: relative;
-    margin-top: 13px;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  margin-top: 13px;
 }
 
 .sizes-container button {
-    display: inline-block;
-    height: 50px;
-    width: 50px;
-    border: 1px solid #C5C5C5;
-    padding: 10px;
-    background: transparent;
-    vertical-align: center;
-    font-weight: bold;
-    margin-right: 5px;
-    outline: none;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #c5c5c5;
+  padding: 10px;
+  background: transparent;
+  vertical-align: center;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  outline: none;
 }
 
 #size-clicked {
-    border: 1.5px solid black;
-    outline: none;
+  border: 1.5px solid black;
+  outline: none;
 }
 
 .sizes-container button:hover {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .sizes-container button:focus {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .sizes-container button:visited {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .product-load {
-    margin-top: 150px;
-    margin-bottom: 140px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: 150px;
+  margin-bottom: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+@media only screen and (max-width: 320px) {
+  .sizes-container button {
+    height: 45px;
+    width: 45px;
+  }
+}
+

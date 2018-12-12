@@ -11,8 +11,10 @@ export default function Chapters() {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-sm-12 col-md-12 cold-lg-12">
           <h1 className="page-title text-center pt-2">North America</h1>
+        </div>
+        <div className="col-sm-12 col-md-4">
           <div className="chapter-container">
             <img src={santaAna} alt="santa-ana" className="img-fluid w-100" />
             <div className="chapter-location">
@@ -22,7 +24,9 @@ export default function Chapters() {
               <p>(714) 760.4812</p>
             </div>
           </div>
+        </div>
 
+        <div className="col-sm-12 col-md-4">
           <div className="chapter-container mt-5">
             <img src={newYork} alt="New York" className="img-fluid w-100" />
             <div className="chapter-location">
@@ -32,7 +36,9 @@ export default function Chapters() {
               <p>(212) 226.8493</p>
             </div>
           </div>
+        </div>
 
+        <div className="col-sm-12 col-md-4">
           <div className="chapter-container mt-5">
             <img src={toronto} alt="toronto" className="img-fluid w-100" />
             <div className="chapter-location">
@@ -42,8 +48,13 @@ export default function Chapters() {
               <p>(416) 537.9600</p>
             </div>
           </div>
+        </div>
 
+        <div className="col-sm-12 col-md-12 cold-lg-12">
           <h1 className="page-title text-center pt-2 mt-5">International</h1>
+        </div>
+
+        <div className="col-sm-12 col-md-4">
           <div className="chapter-container">
             <img src={telaviv} alt="tel-aviv" className="img-fluid w-100" />
             <div className="chapter-location">
@@ -53,7 +64,9 @@ export default function Chapters() {
               <p>+972-3-5096898</p>
             </div>
           </div>
+        </div>
 
+        <div className="col-sm-12 col-md-4">
           <div className="chapter-container mt-5">
             <img src={taipei} alt="taipei" className="img-fluid w-100" />
             <div className="chapter-location">
@@ -65,7 +78,9 @@ export default function Chapters() {
               <p>+886-2-2751-2651</p>
             </div>
           </div>
+        </div>
 
+        <div className="col-sm-12 col-md-4">
           <div className="chapter-container mt-5">
             <img src={japan} alt="japan" className="img-fluid w-100" />
             <div className="chapter-location">

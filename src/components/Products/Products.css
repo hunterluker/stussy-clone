@@ -5,16 +5,23 @@
   margin-bottom: 30px;
 }
 
-
 .product-title {
-    margin: 0;
-    margin-top: 10px;
-    font-size: 12px;
-    text-transform: uppercase;
+  margin: 0;
+  margin-top: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .product-price {
-    font-size: 12px;
-    margin: 0;
-    padding: 0;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
 }

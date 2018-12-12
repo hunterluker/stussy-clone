@@ -1,44 +1,53 @@
 .hero-container {
-    position: relative;
+  position: relative;
 }
 
 .hero-img-container {
-    position: relative !important;
-    height: auto;
+  position: relative !important;
 }
 
 .section-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 50;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: bold;
 }
 
 .hero-img {
-    position: relative !important;
-    top: 0;
+  position: relative !important;
+  top: 0;
 }
 
 .features-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .accessories-img-container {
-    position: relative;
+  position: relative;
 }
 
 .mens-img-container {
-    position: relative;
+  position: relative;
 }
 
 .archive-img-container {
-    position: relative;
+  position: relative;
+}
+
+@media only screen and (min-width: 768px) {
+  .section-title {
+    display: none;
+  }
+
+  .archive-img-container {
+    max-width: 455px;
+  }
 }

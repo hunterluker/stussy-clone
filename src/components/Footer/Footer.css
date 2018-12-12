@@ -31,7 +31,7 @@ a {
 }
 
 .news-input {
-    font-size: 12px !important;
+  font-size: 12px !important;
 }
 
 .newsletter-btn {
@@ -43,24 +43,64 @@ a {
 }
 
 .unsubscribe {
-    margin-top: 15px;
-    margin-bottom: 0;
-    font-size: 11px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-size: 11px;
 }
 
 .form-check {
-    text-transform: uppercase;
-    font-size: 12px;
-    margin: 5px 0;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin: 5px 0;
 }
 
 input:checked {
-    border-color: black !important;
-    background-color: black !important;
+  border-color: black !important;
+  background-color: black !important;
 }
 
 .newsletter:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
+@media only screen and (min-width: 768px) {
+  .footer-one {
+    display: none;
+  }
 
+  .social-list {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .social-list li {
+    margin-right: 25px; 
+  }
+
+  .social-list i {
+    font-size: 12px;
+  }
+
+  .social-list li:last-child {
+    margin: 0 !important;
+  }
+
+  .footer-two {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px !important;
+  }
+
+  .footer-two ul {
+    display: flex;
+  }
+
+  .footer-two li {
+    margin-right: 10px;
+  }
+
+  .copy-right-two {
+    margin-left: 180px;
+  }
+}

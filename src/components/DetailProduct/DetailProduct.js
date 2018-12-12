@@ -71,14 +71,16 @@ class DetailProduct extends Component {
             <Spinner name="line-spin-fade-loader" />
           </div>
         ) : (
-          <div className="container pt-2">
+          <div className="container pt-4">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-sm-12 col-md-8">
                 <img
                   src={mainProductImage ? mainProductImage : product.main_image}
                   alt=""
                   className="img-fluid"
                 />
+              </div>
+              <div className="col-sm-12 col-md-4">
                 <p className="product-title font-weight-bold pt-3">
                   {product.title}
                 </p>
@@ -151,7 +153,9 @@ class DetailProduct extends Component {
                       {product.gender === 'womens' ? null : (
                         <React.Fragment>
                           <button
-                            id={this.state.size === 'XL' ? 'size-clicked' : null}
+                            id={
+                              this.state.size === 'XL' ? 'size-clicked' : null
+                            }
                             onClick={() => this.onSizeSelection('XL')}
                           >
                             XL

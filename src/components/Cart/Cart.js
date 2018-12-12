@@ -95,7 +95,7 @@ class Cart extends Component {
     return (
       <div className="container pt-2">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-sm-12 col-md-10 mx-auto">
             <h1 className="cart-title text-center">Shopping Bag</h1>
 
             {cart.length ? null : (
@@ -116,8 +116,10 @@ class Cart extends Component {
                 </p>
               </div>
             ) : null}
+          </div>
 
-            {cart.length ? (
+          {cart.length ? (
+            <div className="col-sm-12 col-md-4 ml-auto">
               <StripeCheckout
                 name="Sussy Clone"
                 description="Stussy Clone Cart Checkout"
@@ -133,14 +135,16 @@ class Cart extends Component {
               >
                 <button className="checkout-btn btn btn-block">Checkout</button>
               </StripeCheckout>
-            ) : (
+            </div>
+          ) : (
+            <div className="col-sm-12 col-md-6 mx-auto">
               <a href="/">
                 <button className="continue-btn btn btn-block">
                   Continue Shopping
                 </button>
               </a>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     );

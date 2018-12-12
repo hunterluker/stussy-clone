@@ -49,6 +49,24 @@ class Header extends Component {
                 className="mt-2"
               />
             </a>
+
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <div className="navmenu-left">
+                  <li className="nav-item">Mens</li>
+                  <li className="nav-item">Womens</li>
+                  <li className="nav-item">Accessoreis</li>
+                  <li className="nav-item">Collections</li>
+                </div>
+
+                <div className="navmenu-right">
+                  <li className="nav-item">Search</li>
+                  <li className="nav-item">Account</li>
+                  <li className="nav-item">ShoppingBag</li>
+                </div>
+              </ul>
+            </div>
+
             <div className="cart-container">
               <Link to="/cart">
                 <img
@@ -60,7 +78,13 @@ class Header extends Component {
                   onClick={!this.state.hidden ? () => this.toggleMenu() : null}
                 />
               </Link>
-              {<span className="cart-quantity">{this.props.cartQuantity <= 0 ? null : this.props.cartQuantity}</span>}
+              {
+                <span className="cart-quantity">
+                  {this.props.cartQuantity <= 0
+                    ? null
+                    : this.props.cartQuantity}
+                </span>
+              }
             </div>
           </nav>
         </header>

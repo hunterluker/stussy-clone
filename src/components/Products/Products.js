@@ -66,22 +66,26 @@ export default class Products extends Component {
   render() {
     const mappedProducts = this.state.products.map(product => {
       return (
-        <Link
-          to={`/product/${product.gender}/${product.product_id}`}
-          key={product.id}
-        >
-          <div className="my-3">
-            <img
-              src={product.main_image}
-              alt={product.title}
-              className="img-fluid"
-            />
-            <p className="text-center product-title">{product.title}</p>
-            <p className="text-center product-price pb-3">
-              ${product.price}.00
-            </p>
-          </div>
-        </Link>
+        <div className="col-sm-12 col-md-4 cold-lg-3 product">
+          <Link
+            to={`/product/${product.gender}/${product.product_id}`}
+            key={product.id}
+          >
+            <div className="my-3">
+              <img
+                src={product.main_image}
+                alt={product.title}
+                className="img-fluid main-product-image"
+              />
+              <div className="product-text-container">
+                <p className="text-center product-title">{product.title}</p>
+                <p className="text-center product-price pb-3">
+                  ${product.price}.00
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
       );
     });
 
@@ -100,7 +104,7 @@ export default class Products extends Component {
                     ? this.props.match.params.gender
                     : 'All Products'}
                 </h1>
-                {mappedProducts}
+                <div className="product-wrapper">{mappedProducts}</div>
               </div>
             </div>
           </div>

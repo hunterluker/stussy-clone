@@ -6,7 +6,7 @@ export default class Account extends Component {
     return (
       <div className="container pt-2">
         <div className="row">
-          <div className="col-md-12">
+          <div className="col-lg-12 col-sm-8 col-md-8 mx-auto">
             <h1 className="account-title text-center pb-5 mb-2">Account</h1>
             <h2 className="account-subtitle pb-3">New Customers</h2>
             <p className="account-p">

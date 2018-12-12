@@ -105,3 +105,9 @@
   font-size: 14px;
   z-index: -5;
 }
+
+@media only screen and (min-width: 768px) {
+  .menu {
+    width: 50vw !important;
+  }
+}
