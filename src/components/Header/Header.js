@@ -55,18 +55,30 @@ class Header extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <div className="navmenu-left ml-auto">
-                  <li className="nav-item">Mens</li>
-                  <li className="nav-item">Womens</li>
-                  <li className="nav-item">Accessoreis</li>
-                  <li className="nav-item">Collections</li>
+                  <Link to={`/products/${'mens'}`}>
+                    <li className="nav-item">Mens</li>
+                  </Link>
+                  <Link to={`/products/${'womens'}`}>
+                    <li className="nav-item">Womens</li>
+                  </Link>
+                  <Link to={`/products/${'accessories'}`}>
+                    <li className="nav-item">Accessoreis</li>
+                  </Link>
+                  <Link to="/products">
+                    <li className="nav-item">Collections</li>
+                  </Link>
                 </div>
 
                 <div className="navmenu-right ml-auto">
                   <li className="nav-item">Search</li>
-                  <li className="nav-item">Account</li>
-                  <li className="nav-item">Shopping Bag</li>
+                  <Link to="/account">
+                    <li className="nav-item">Account</li>
+                  </Link>
+                  <Link to="/cart">
+                    <li className="nav-item">Shopping Bag</li>
+                  </Link>
                   <li>
-                    <img src={flagImg} width="20px" alt="flag" /> 
+                    <img src={flagImg} width="20px" alt="flag" />
                   </li>
                 </div>
               </ul>
