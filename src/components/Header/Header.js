@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import NavMenu from './NavMenu';
+import MediaQuery from 'react-responsive';
 import brandImg from '../../images/stussy-stock-logo.svg';
 import cartImg from '../../images/shopping-bag.svg';
+import flagImg from '../../images/flag-us.svg';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { connect } from 'react-redux';
@@ -52,40 +54,48 @@ class Header extends Component {
 
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
-                <div className="navmenu-left">
+                <div className="navmenu-left ml-auto">
                   <li className="nav-item">Mens</li>
                   <li className="nav-item">Womens</li>
                   <li className="nav-item">Accessoreis</li>
                   <li className="nav-item">Collections</li>
                 </div>
 
-                <div className="navmenu-right">
+                <div className="navmenu-right ml-auto">
                   <li className="nav-item">Search</li>
                   <li className="nav-item">Account</li>
-                  <li className="nav-item">ShoppingBag</li>
+                  <li className="nav-item">Shopping Bag</li>
+                  <li>
+                    <img src={flagImg} width="20px" alt="flag" /> 
+                  </li>
                 </div>
               </ul>
             </div>
 
-            <div className="cart-container">
-              <Link to="/cart">
-                <img
-                  src={cartImg}
-                  alt="cart-img"
-                  width="24px"
-                  height="auto"
-                  className="mb-1"
-                  onClick={!this.state.hidden ? () => this.toggleMenu() : null}
-                />
-              </Link>
-              {
-                <span className="cart-quantity">
-                  {this.props.cartQuantity <= 0
-                    ? null
-                    : this.props.cartQuantity}
-                </span>
-              }
-            </div>
+            <MediaQuery query="(max-device-width: 991px)">
+              <div className="cart-container">
+                <Link to="/cart">
+                  <img
+                    className="cart-icon"
+                    src={cartImg}
+                    alt="cart-img"
+                    width="24px"
+                    height="auto"
+                    className="mb-1"
+                    onClick={
+                      !this.state.hidden ? () => this.toggleMenu() : null
+                    }
+                  />
+                </Link>
+                {
+                  <span className="cart-quantity">
+                    {this.props.cartQuantity <= 0
+                      ? null
+                      : this.props.cartQuantity}
+                  </span>
+                }
+              </div>
+            </MediaQuery>
           </nav>
         </header>
 

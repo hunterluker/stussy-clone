@@ -13,7 +13,7 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home-section">
-        <div className="container hero-container mb-3">
+        <div className="hero-container mb-3">
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12 col-lg-12" />
             <Link to={`/products/${'mens'}`}>
@@ -29,7 +29,7 @@ export default class Home extends Component {
 
         <div className="container features-container">
           <div className="row">
-            <div className="col-12 col-sm-12 col-md-4">
+            <div className="col-12 col-sm-12 col-md-4 col-lg-5">
               <Link to={`/products/${'accessories'}`}>
                 <div className="accessories-img-container mb-3">
                   <h2 className="section-title">Accessories</h2>
@@ -51,7 +51,7 @@ export default class Home extends Component {
                 </div>
               </Link>
             </div>
-            <div className="col-12 col-sm-12 col-md-8">
+            <div className="col-12 col-sm-12 col-md-8 col-lg-7">
               <Link to={`/products`}>
                 <div className="archive-img-container mb-3">
                   <h2 className="section-title">Stussy Archive</h2>
@@ -63,7 +63,7 @@ export default class Home extends Component {
                 </div>
               </Link>
             </div>
-            <div className="col-12 col-sm-12 col-md-4">
+            <div className="col-12 col-sm-12 col-md-4 col-lg-5">
               <Link to={`/products/${'mens'}?category=sweater`}>
                 <div className="accessories-img-container mb-3">
                   <h2 className="section-title text-white">
@@ -87,7 +87,7 @@ export default class Home extends Component {
                 </div>
               </Link>
             </div>
-            <div className="col-12 col-sm-12 col-md-8">
+            <div className="col-12 col-sm-12 col-md-8 col-lg-7">
               <Link to={`/products/${'womens'}`}>
                 <div className="archive-img-container mb-3">
                   <h2 className="section-title text-white">

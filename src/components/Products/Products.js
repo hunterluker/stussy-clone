@@ -66,11 +66,8 @@ export default class Products extends Component {
   render() {
     const mappedProducts = this.state.products.map(product => {
       return (
-        <div className="col-sm-12 col-md-4 cold-lg-3 product">
-          <Link
-            to={`/product/${product.gender}/${product.product_id}`}
-            key={product.id}
-          >
+        <div className="col-sm-12 col-md-4 col-lg-3 product" key={product.id}>
+          <Link to={`/product/${product.gender}/${product.product_id}`}>
             <div className="my-3">
               <img
                 src={product.main_image}

@@ -1,5 +1,6 @@
 .hero-container {
   position: relative;
+  overflow: hidden;
 }
 
 .hero-img-container {
@@ -25,10 +26,10 @@
   top: 0;
 }
 
-.features-container {
-  display: flex;
-  flex-wrap: wrap;
-}
+/* .features-container {
+  width: 1200px;
+  margin: 0 auto;
+} */
 
 .accessories-img-container {
   position: relative;
@@ -49,5 +50,27 @@
 
   .archive-img-container {
     max-width: 455px;
+  }
+}
+
+
+@media only screen and (min-width: 992px) {
+  .hero-container {
+    overflow: hidden;
+  }
+
+  .archive-img-container {
+    min-height: 100px;
+  }
+
+  .archive-img-container img {
+    min-width: 670px;
+    height: 1190px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px !important;
   }
 }
