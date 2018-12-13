@@ -3,6 +3,7 @@ import uuid from 'uuid';
 import axios from 'axios';
 import './DetailProduct.css';
 import { connect } from 'react-redux';
+import MediaQuery from 'react-responsive';
 import { updateProductImage, addToCart } from '../../ducks/reducer';
 import Spinner from 'react-spinkit';
 
@@ -73,18 +74,18 @@ class DetailProduct extends Component {
         ) : (
           <div className="container pt-4">
             <div className="row">
-              <div className="col-sm-12 col-md-8 col-lg-8">
+              <div className="col-sm-12 col-md-8 col-lg-9">
                 <img
                   src={mainProductImage ? mainProductImage : product.main_image}
                   alt=""
                   className="img-fluid"
                 />
               </div>
-              <div className="col-sm-12 col-md-4 col-lg-4">
+              <div className="col-sm-12 col-md-4 col-lg-3">
                 <p className="product-title font-weight-bold pt-3">
                   {product.title}
                 </p>
-                <p className="product-price py-3 mb-2">${product.price}.00</p>
+                <p className="product-price">${product.price}.00</p>
 
                 <div className="color-selection">
                   {product.image1 ? (
@@ -175,7 +176,7 @@ class DetailProduct extends Component {
 
                   <button
                     onClick={() => this.addToCart(product)}
-                    className="add-cart-btn btn btn-block py-3 mt-3"
+                    className="add-cart-btn btn btn-block mt-3"
                     disabled={
                       !this.state.size && product.gender !== 'accessories'
                         ? true
@@ -184,6 +185,9 @@ class DetailProduct extends Component {
                   >
                     Add to bag
                   </button>
+                  <MediaQuery query="(min-device-width: 992px)">
+                    {<p className="product-description">{this.state.product.description}</p>}
+                  </MediaQuery>
                 </div>
               </div>
             </div>

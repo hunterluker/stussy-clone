@@ -95,7 +95,7 @@ class Cart extends Component {
     return (
       <div className="container pt-2">
         <div className="row">
-          <div className="col-sm-12 col-md-10 mx-auto">
+          <div className="col-sm-12 col-md-10 col-lg-7 mx-auto">
             <h1 className="cart-title text-center">Shopping Bag</h1>
 
             {cart.length ? null : (
@@ -103,7 +103,7 @@ class Cart extends Component {
                 You have no items in your shopping bag.
               </p>
             )}
-
+            
             {mappedCart}
 
             {cart.length ? (
@@ -119,7 +119,7 @@ class Cart extends Component {
           </div>
 
           {cart.length ? (
-            <div className="col-sm-12 col-md-4 ml-auto">
+            <div className="col-sm-12 col-md-4 col-lg-8  ml-auto">
               <StripeCheckout
                 name="Sussy Clone"
                 description="Stussy Clone Cart Checkout"

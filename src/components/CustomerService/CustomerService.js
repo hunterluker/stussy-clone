@@ -6,7 +6,7 @@ export default class CustomerService extends Component {
     return (
       <div className="container">
         <div className="row">
-        <div className="col-lg-8 col-sm-12 col-md-8 mx-auto">
+        <div className="col-sm-12 col-md-8 col-lg-5 mx-auto">
             <button className="customer-service btn btn-block mt-2 mb-4">
               Customer Service
             </button>
