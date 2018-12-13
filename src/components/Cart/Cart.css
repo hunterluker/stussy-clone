@@ -24,6 +24,17 @@
   padding: 10px 0 !important;
 }
 
+.continue-btn-2 {
+  background: black;
+  text-transform: uppercase;
+  color: white;
+  border-radius: none !important;
+  margin-bottom: 200px;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  padding: 10px 0 !important;
+}
+
 .checkout-btn {
   background: black;
   text-transform: uppercase;
@@ -173,6 +184,15 @@
   .total-container {
     width: 250px;
   }
+
+  .continue-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .continue-btn {
+    width: 300px !important;
+  }
 }
 
 
@@ -201,5 +221,18 @@
 
   .total-container {
     width: 260px;
+  }
+
+  .continue-link {
+    display: flex;
+    justify-content: center;
+  }
+
+  .continue-btn {
+    width: 300px !important;
+  }
+
+  .continue-btn-2 {
+    width: 300px !important;
   }
 }

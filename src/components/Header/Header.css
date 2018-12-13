@@ -51,6 +51,16 @@
   }
 }
 
+.header-search {
+  border: none;
+  border-bottom: 1px solid black;
+  width: 200px;
+}
+
+.header-search:focus {
+  outline: none;
+}
+
 .menu {
   width: 100vw;
   height: 100vh;

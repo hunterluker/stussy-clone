@@ -138,7 +138,7 @@ class Cart extends Component {
             </div>
           ) : (
             <div className="col-sm-12 col-md-6 mx-auto">
-              <a href="/">
+              <a href="/" className="continue-link">
                 <button className="continue-btn btn btn-block">
                   Continue Shopping
                 </button>

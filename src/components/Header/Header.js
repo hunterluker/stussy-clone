@@ -14,10 +14,17 @@ class Header extends Component {
 
     this.state = {
       hidden: true,
-      loaded: false
+      loaded: false,
+      searchToggle: false
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
+  }
+
+  onSearchToggle() {
+    this.setState({
+      searchToggle: true
+    });
   }
 
   toggleMenu() {
@@ -70,12 +77,35 @@ class Header extends Component {
                 </div>
 
                 <div className="navmenu-right ml-auto">
-                  <li className="nav-item">Search</li>
+                  <li
+                    className="nav-item"
+                    onClick={() => this.onSearchToggle()}
+                  >
+                    {this.state.searchToggle ? (
+                      <input
+                        className="header-search"
+                        placeholder="SEARCH"
+                        autoFocus
+                      />
+                    ) : (
+                      'Search'
+                    )}
+                  </li>
                   <Link to="/account">
                     <li className="nav-item">Account</li>
                   </Link>
                   <Link to="/cart">
-                    <li className="nav-item">Shopping Bag</li>
+                    <li className="nav-item">
+                      Shopping Bag {' '}
+                      {
+                        <span className="cart-quantity-2">
+                          {this.props.cartQuantity <= 0
+                            ? null
+                            : '(' + this.props.cartQuantity + ')'}
+                        </span>
+                      }
+                      
+                    </li>
                   </Link>
                   <li>
                     <img src={flagImg} width="20px" alt="flag" />

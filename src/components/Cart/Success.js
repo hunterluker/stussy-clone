@@ -10,8 +10,8 @@ export default function Success() {
             Thank you for your purchase!
           </p>
 
-          <a href="/">
-            <button className="continue-btn btn btn-block mt-5">
+          <a href="/" className="continue-link">
+            <button className="continue-btn-2 btn btn-block mt-5">
               Continue Shopping
             </button>
           </a>
