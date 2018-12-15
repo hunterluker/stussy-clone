@@ -72,11 +72,11 @@ class Cart extends Component {
 
             <div className="price-container">
               <div className="product-qty-container">
-                <span onClick={() => this.onUpdateItem('minus', product)}>
+                <span className="negative" onClick={() => this.onUpdateItem('minus', product)}>
                   -
                 </span>
                 <span>{product.itemQuantity >= 1 && product.itemQuantity}</span>
-                <span onClick={() => this.onUpdateItem('plus', product)}>
+                <span className="positive" onClick={() => this.onUpdateItem('plus', product)}>
                   +
                 </span>
               </div>

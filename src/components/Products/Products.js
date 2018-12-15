@@ -15,14 +15,7 @@ export default class Products extends Component {
   }
 
   componentDidMount() {
-    if (!this.props.match.params.gender) {
-      axios.get(`/api/products`).then(res => {
-        this.setState({
-          products: res.data,
-          loading: true
-        });
-      });
-    } else if (this.props.location.search) {
+    if (this.props.location.search) {
       axios
         .get(
           `/api/products/${this.props.match.params.gender}${
@@ -35,21 +28,18 @@ export default class Products extends Component {
             loading: true
           });
         });
-    } else {
+    } else if (this.props.match.params.gender) {
       axios.get(`/api/products/${this.props.match.params.gender}`).then(res => {
         this.setState({
           products: res.data,
           loading: true
         });
       });
-    }
-  }
-
-  componentDidUpdate() {
-    if (!this.props.match.params.gender) {
+    } else {
       axios.get(`/api/products`).then(res => {
         this.setState({
-          products: res.data
+          products: res.data,
+          loading: true
         });
       });
     }

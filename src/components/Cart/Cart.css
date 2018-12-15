@@ -55,6 +55,12 @@
   padding-bottom: 10px;
 }
 
+.negative:hover,
+.positive:hover {
+  cursor: pointer;
+}
+
+
 .image-container {
   width: 33.333%;
   margin-right: 10px;
