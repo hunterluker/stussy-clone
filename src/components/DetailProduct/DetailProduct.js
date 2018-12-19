@@ -74,11 +74,11 @@ class DetailProduct extends Component {
         ) : (
           <div className="container pt-4">
             <div className="row">
-              <div className="col-sm-12 col-md-8 col-lg-9">
+              <div className="col-sm-12 col-md-8 col-lg-9 detail">
                 <img
                   src={mainProductImage ? mainProductImage : product.main_image}
                   alt=""
-                  className="img-fluid"
+                  className="img-fluid detail-img"
                 />
               </div>
               <div className="col-sm-12 col-md-4 col-lg-3">
