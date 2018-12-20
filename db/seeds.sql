@@ -32,6 +32,29 @@ on p.product_id = pi.product_id;
 
 
 
+drop table if exists product_images
+drop table if exists products;
+
+create table products
+(
+    id serial primary key,
+    product_id integer,
+    price integer,
+    title varchar(100),
+    description text,
+    gender text,
+    category text
+)
+
+create table product_images (
+    id serial primary key,
+    product_id integer,
+    main_image text,
+    image1 text,
+    image2 text,
+    image3 text
+)
+
 
 
 --PRODUCTS
@@ -134,8 +157,67 @@ values(24, 44.00, 'ITAL HARVEST L/SL TEE', 'Regular fit long sleeve t-shirt Ribb
 
 insert into products 
 ( product_id, price, title, description, gender, category)
-values(25, 46.00, 'OBLIVION TIE DYE TEE
-', 'Regular fit short sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
+values(25, 46.00, 'OBLIVION TIE DYE TEE', 'Regular fit short sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(26, 36.00, 'POOL DRAGON TEE', 'Regular fit short sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(27, 36.00, 'BASIC STUSSY TEE', 'Relaxed fit Crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(28, 42.00, 'RASTA POCKET TEE', 'Regular fit short sleeve pocket t-shirt Ribbed crew neck Screen print logo 100% cotton Pigment dye treatment Imported', 'mens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(29, 42.00, 'RASTA POCKET TEE', 'Regular fit long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(30, 42.00, 'INTERNATIONAL ARC L/SL TEE', 'Regular fit long sleeve t-shirt Ribbed crew neck Printed logo 100% cotton Imported', 'mens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(31, 120.00, 'PILE FLEECE HOOD', 'Relaxed/oversized fit Ribbed cuffs, and hem Embroidered logo 60% Poly/40% cotton Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(32, 105.00, 'COLOR BLOCKED HOOD', 'Regular fit long sleeve sweatshirt Ribbed neck, cuffs and hem Printed logo Double needle sewing on all seams 80% cotton, 20% polyester fleece Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(33, 85.00, 'DYNASTY CREW', 'Relaxed color blocked pullover hoodie Adjustable hem Ribbed cuffs Screen printed logo Contrast color hood and drawcord Kangaroo style pocket 100% cotton dry fleece Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(34, 90.00, 'STÜSSY WELD APPLIQUE CREW', 'Relaxed/oversized fit Ribbed cuffs, and hem Embroidered logo 80% cotton, 20% polyester Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(35, 80.00, 'STOCK S/SL TERRY CREW', 'Mid-weight crewneck sweatshirt Regular fit Ribbed neck, cuffs, and hem Embroidered tonal logo 100% cotton dry terry Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(36, 120.00, 'BLEACHED DYE SWEATER', 'Regular fit long sleeve sweatshirt Ribbed neck, cuffs and hem Embroidered logo Double needle sewing on all seams 100% cotton Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(37, 130.00, 'RIPSTOP PULLOVER', 'Printed logo on back Kangaroo pocketAdjustable drawcords 100% Cotton ripstop Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(38, 95.00, 'POLAR FLEECE HALF ZIP', 'Mocked neck Embroidered logo Zipped closure 100% Polyester polar fleece Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(39, 115.00, 'PERRY ZIP L/SL POLO KNIT', 'Mid-weight body Full zip polo Pointed collar Embroidered logo 100% combed cotton Imported', 'mens', 'sweater');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(40, 95.00, 'BASIC STÜSSY ZIP HOOD', 'Regular fit long sleeve sweatshirt Ribbed cuffs and hem Hood with drawstrings Full zip closure Two hand pockets Printed logo 80% cotton, 20% polyester fleece Imported', 'mens', 'sweater');
 
 
 -- PRODUCT IMAGES
@@ -183,19 +265,19 @@ insert into product_images
 values(10, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/9/3923277_BLAC_2.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/9/3923277_BLAC_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/9/3923277_NATL_2.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/9/3923277_PINE_2.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(11, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115423_LIME_6.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115423_LIME_6.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115423_TIED_1.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1)
 values(12, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115416_MULT_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115416_MULT_1.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(13, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115421_ORAN_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115421_ORAN_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115421_BLAC_1.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(14, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315153_BROW_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315153_BROW_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/1/315153_GREN_1.jpg');
 
 insert into product_images
@@ -207,12 +289,12 @@ insert into product_images
 values(16, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_BLAC_10.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_BLAC_10.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_CAMO_10.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_RUST_10.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(17, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115425_NAVY_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115425_NAVY_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/115425_BURG_1.jpg');
 
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(18, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118286_CAMO_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118286_CAMO_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118286_ORAN_1.jpg');
 
 
@@ -226,7 +308,7 @@ insert into product_images
 values(20, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944314_GOLD_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944314_GOLD_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944314_ARMY_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944314_BLAC_1.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(21, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994329_NAT6_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994329_NAT6_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994329_NAT3_1.jpg');
 
 insert into product_images
@@ -243,5 +325,65 @@ insert into product_images
 values(24, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994325_NATL_1.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994325_NATL_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994325_RASP_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994325_SLAT_1.jpg');
 
 insert into product_images
-(product_id, main_image, image1, image2, image3)
+(product_id, main_image, image1, image2)
 values(25, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904318_NAT1_1_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904318_NAT1_1_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904318_NAT5_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(26, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904306_WINE_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904306_WINE_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904306_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904306_OCEA_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(27, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904257_BLAC_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904257_BLAC_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904257_WHIT_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1904257_INKK_2.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(28, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944315_SLAT_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944315_SLAT_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944315_RASP_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1944315_BLUS_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(29, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994290_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994290_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994290_PALG_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994290_WHIT_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(30, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994227_BLAC_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994227_BLAC_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994227_GHEA_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1994227_WHIT_2.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(31, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118301_BERR_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118301_BERR_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118301_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118301_OLIV_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(32, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1914300_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1914300_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1914300_PALG_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1914300_WINE_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(33, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118300_NAVY_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118300_NAVY_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(34, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118305_GHEA_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118305_GHEA_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118305_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118305_PALG_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(35, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118268_GHEA_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118268_GHEA_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118268_BLAC_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(36, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117053_REDD_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117053_REDD_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117053_OLIV_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(37, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_BLAC_10.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_BLAC_10.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_CAMO_10.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110004_RUST_10.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(38, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118287_LIME_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118287_LIME_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118287_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/118287_ROYL_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(39, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117057_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117057_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117057_OLIV_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(40, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_ASHH_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_ASHH_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_RUST_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_BLAC_1.jpg');
