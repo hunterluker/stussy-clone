@@ -219,6 +219,48 @@ insert into products
 ( product_id, price, title, description, gender, category)
 values(40, 95.00, 'BASIC STÜSSY ZIP HOOD', 'Regular fit long sleeve sweatshirt Ribbed cuffs and hem Hood with drawstrings Full zip closure Two hand pockets Printed logo 80% cotton, 20% polyester fleece Imported', 'mens', 'sweater');
 
+insert into products 
+( product_id, price, title, description, gender, category)
+values(41, 95.00, 'MUSHROOM CORD L/SL SHIRT', 'Light yarn dyed body Button fastenings Pointed collar Mushroom print all over Straight hem 100% cotton printed 21 wale corduroy Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(42, 90.00, 'SIMON L/SL ZIP POLO', 'Mid-weight body Full zip polo Pointed collar Embroidered logo 100% Heavy cotton yarn dyed stripe Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(43, 125.00, 'TIE DYE WORK L/SL SHIRT', 'Light yarn tie dyed body Button down placket Pointed collar Double chest pocket with button down flaps 100% Textured cotton Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(44, 115.00, 'PERRY ZIP L/SL POLO KNIT', 'Mid-weight body Full zip polo Pointed collar Embroidered logo 100% combed cotton Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(45, 105.00, 'WORK L/SL SHIRT', 'Pointed collar Split hem Embroidered patch Button closure Frontal chest pocket 65% polyester 35% cotton Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(46, 120.00, 'GEO SATIN L/SL SHIRT', 'Button fastenings Pointed collar Front chest pocket 55% Viscose/ 45% Raylon Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(47, 80.00, 'BOWLING SHIRT', 'Classic bowling style shirtEmbroidered logo Double chest pockets 70% poly and 30% rayon Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(48, 85.00, 'BERKELEY DENIM L/SL SHIRT', 'Denim construction Pointed collar Button placket Chest pocket 100% cotton Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(49, 100.00, 'LETTS BDU SHIRT', 'Pointed button collar Straight hem Double chest pocket Tonal buttons 100% cotton ripstop Imported', 'mens', 'shirt');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(50, 70.00, 'LION ZIP POCKET POLO', 'Heavy yarn dyed body Signature woven tab Pointed collar Full zip placket Straight hem 100% cotton pique Imported', 'mens', 'shirt');
+
+
+
 
 -- PRODUCT IMAGES
 insert into product_images
@@ -387,3 +429,44 @@ values(39, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/ca
 insert into product_images
 (product_id, main_image, image1, image2, image3)
 values(40, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_ASHH_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_ASHH_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_RUST_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/9/1974257_BLAC_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(41, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110011_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110011_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110011_BURG_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(42, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140114_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140114_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140114_BROW_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(43, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110015_YELO_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110015_YELO_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110015_OLIV_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(44, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117057_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117057_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/117057_OLIV_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(45, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110001_BLUE_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110001_BLUE_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110001_NAVY_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1110001_ORAN_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(46, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111991_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111991_BLAC_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(47, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111998_BLUE_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111998_BLUE_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(48, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111962_LBLU_1_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111962_LBLU_1_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(49, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111968_OLIV_1_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111968_OLIV_1_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111968_ORAN_1_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/111968_PINK_1_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(50, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140092_BLAC_1.jpg',
+'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140092_BLAC_1.jpg');
