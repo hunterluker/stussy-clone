@@ -15,7 +15,7 @@ class DetailProduct extends Component {
       product: {},
       mainProductImage: this.props.selectedImage,
       size: '',
-      loading: false
+      loading: true
     };
 
     this.updateProductImage = this.updateProductImage.bind(this);
@@ -33,7 +33,7 @@ class DetailProduct extends Component {
         this.setState({
           product: res.data[0],
           mainProductImage: res.data[0].main_image,
-          loading: true
+          loading: false
         });
       });
   }
@@ -67,7 +67,7 @@ class DetailProduct extends Component {
     const { product, mainProductImage } = this.state;
     return (
       <React.Fragment>
-        {this.state.loading === false ? (
+        {this.state.loading ? (
           <div className="product-load">
             <Spinner name="line-spin-fade-loader" />
           </div>
@@ -186,7 +186,11 @@ class DetailProduct extends Component {
                     Add to bag
                   </button>
                   <MediaQuery query="(min-device-width: 992px)">
-                    {<p className="product-description">{this.state.product.description}</p>}
+                    {
+                      <p className="product-description">
+                        {this.state.product.description}
+                      </p>
+                    }
                   </MediaQuery>
                 </div>
               </div>

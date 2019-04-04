@@ -32,7 +32,7 @@ on p.product_id = pi.product_id;
 
 
 
-drop table if exists product_images
+drop table if exists product_images;
 drop table if exists products;
 
 create table products
@@ -259,7 +259,50 @@ insert into products
 ( product_id, price, title, description, gender, category)
 values(50, 70.00, 'LION ZIP POCKET POLO', 'Heavy yarn dyed body Signature woven tab Pointed collar Full zip placket Straight hem 100% cotton pique Imported', 'mens', 'shirt');
 
+insert into products 
+( product_id, price, title, description, gender, category)
+values(51, 48.00, 'WS WORLD TOUR L/SL TEE', 'Womens long sleeve tee shirt Ribbed crew neck Printed logo 100% cotton Imported', 'womens', 'tees');
 
+insert into products 
+( product_id, price, title, description, gender, category)
+values(52, 38.00, 'WS WORLD TOUR TEE', 'Womens short sleeve t-shirt Ribbed crew neck Printed graphic 100% cotton Imported', 'womens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(53, 35.00, 'S CROWN TEE', 'Relaxed fit Double-needle stitching Crew neck Screenprinted logo 100% pigment dyed cotton Imported', 'womens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(54, 48.00, 'WS PLANT LOVE TIE DYE L/SL TEE', 'Womens L/SL Tee Regular fit long sleeve t-shirt Ribbed neck and cuffs Screenprint design 100% cotton Pigment dye treatment Imported', 'womens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(55, 35.00, 'ALL THAT JAZZ L/SL TEE', 'Womens L/SL Tee Classic fit long sleeve t-shirt Ribbed neck and cuffs Printed logo 100% cotton Imported', 'womens', 'tees');
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(56, 35.00, 'STARS TEE', 'Relaxed fit Double-needle stitching Crew neck Screenprinted logo 100% pigment dyed cotton Imported', 'womens', 'tees')
+;
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(57, 38.00, 'WS YANG SUN TIE DYE TEE', 'Womens sleeve t-shirt Ribbed crew neck Printed logo 100% tie dyed cotton Imported', 'womens', 'tees')
+;
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(58, 44.00, '8 BALL L/SL TEE', 'Regular fit long sleeve t-shirt Ribbed neck and cuffs Screenprint design 100% cotton Pigment dye treatment Imported', 'womens', 'tees')
+;
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(59, 44.00, 'CAMO ITALIC L/SL TEE', 'Regular fit long sleeve t-shirt Ribbed neck and cuffs Screenprint design 100% cotton Pigment dye treatment Imported', 'womens', 'tees')
+;
+
+insert into products 
+( product_id, price, title, description, gender, category)
+values(60, 35.00, 'DOT FADE TEE', 'Womens tee shirt Crew neck Screen print 100% cotton Imported', 'womens', 'tees')
+;
 
 
 -- PRODUCT IMAGES
@@ -470,3 +513,48 @@ insert into product_images
 (product_id, main_image, image1)
 values(50, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140092_BLAC_1.jpg',
 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/1/1140092_BLAC_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(51, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992584_BLUS_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992584_BLUS_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992584_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992584_ARMY_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(52, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902995_RASP_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902995_RASP_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902995_SLAT_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902995_NATL_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(53, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902983_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902983_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902983_NATL_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902983_BLUS_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(54, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992572_NAT2_1.jpg',
+'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992572_NAT2_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(55, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992569_BLAC_1.jpg',
+'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992569_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992569_RUST_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992569_PALG_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2)
+values(56, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902974_BLUS_1.jpg',
+'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902974_BLUS_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902974_BLAC_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1)
+values(57, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902976_WHI6_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902976_WHI6_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(58, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992565_SLAT_2.jpg',
+'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992565_SLAT_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992565_GOLD_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992565_RASP_2.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(59, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992566_SLAT_1.jpg',
+'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992566_SLAT_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992566_BLAC_1.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2992566_RASP_1.jpg');
+
+insert into product_images
+(product_id, main_image, image1, image2, image3)
+values(60, 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902972_GOLD_2.jpg','https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902972_GOLD_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902972_BLUS_2.jpg', 'https://d2xe6rib7hqydz.cloudfront.net/store/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/9/2902972_BLAC_2.jpg');
